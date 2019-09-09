@@ -1,2 +1,2 @@
-# make-your-makey
+# meet-your-makey
 Makey Makey project
