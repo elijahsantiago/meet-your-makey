@@ -314,52 +314,62 @@ margin_right = 234.0
 margin_bottom = 591.0
 custom_constants/separation = 5
 
-[node name="Panel" type="Panel" parent="Musical Container/VBoxContainer"]
+[node name="W Input Panel" type="Panel" parent="Musical Container/VBoxContainer"]
+editor/display_folded = true
 margin_right = 227.0
 margin_bottom = 79.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Musical Container/VBoxContainer/Panel"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Musical Container/VBoxContainer/W Input Panel"]
+editor/display_folded = true
+margin_right = 226.0
+margin_bottom = 77.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="Musical Container/VBoxContainer/Panel/HBoxContainer"]
-margin_right = 13.0
-margin_bottom = 80.0
+[node name="CenterContainer" type="CenterContainer" parent="Musical Container/VBoxContainer/W Input Panel/HBoxContainer"]
+margin_right = 77.0
+margin_bottom = 77.0
 
-[node name="Label" type="Label" parent="Musical Container/VBoxContainer/Panel/HBoxContainer/CenterContainer"]
-margin_top = 33.0
-margin_right = 13.0
-margin_bottom = 47.0
+[node name="Label" type="Label" parent="Musical Container/VBoxContainer/W Input Panel/HBoxContainer/CenterContainer"]
+margin_right = 77.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 77, 77 )
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "W"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Musical Container/VBoxContainer/Panel/HBoxContainer"]
-margin_left = 17.0
-margin_right = 119.0
-margin_bottom = 80.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Musical Container/VBoxContainer/W Input Panel/HBoxContainer"]
+margin_left = 81.0
+margin_right = 226.0
+margin_bottom = 77.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 10
 alignment = 1
 
-[node name="OptionButton" type="OptionButton" parent="Musical Container/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
-margin_top = 15.0
-margin_right = 102.0
-margin_bottom = 35.0
+[node name="OptionButton" type="OptionButton" parent="Musical Container/VBoxContainer/W Input Panel/HBoxContainer/VBoxContainer"]
+margin_top = 13.0
+margin_right = 145.0
+margin_bottom = 33.0
 grow_horizontal = 0
 grow_vertical = 0
-size_flags_horizontal = 3
+text = "Item 0"
+align = 1
+items = [ "Bass", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
 
-[node name="OptionButton2" type="OptionButton" parent="Musical Container/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
-margin_top = 45.0
-margin_right = 102.0
-margin_bottom = 65.0
+[node name="OptionButton2" type="OptionButton" parent="Musical Container/VBoxContainer/W Input Panel/HBoxContainer/VBoxContainer"]
+margin_top = 43.0
+margin_right = 145.0
+margin_bottom = 63.0
+text = "Item 0"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 0
 
 [node name="Panel2" type="Panel" parent="Musical Container/VBoxContainer"]
 editor/display_folded = true
