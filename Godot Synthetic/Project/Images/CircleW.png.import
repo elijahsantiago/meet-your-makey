@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-1e4d6d2482080b9ceeb158bad6512e65.stex"
+path="res://.import/CircleW.png-dcb5f1e5ed9884dec930e80c51f62903.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/addons/midi/icon.png"
-dest_files=[ "res://.import/icon.png-1e4d6d2482080b9ceeb158bad6512e65.stex" ]
+source_file="res://Images/CircleW.png"
+dest_files=[ "res://.import/CircleW.png-dcb5f1e5ed9884dec930e80c51f62903.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

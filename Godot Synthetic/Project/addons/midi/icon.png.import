@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Music Pitch Circle.png-a922663ed2c5fd632f5dbaf2ba60177a.stex"
+path="res://.import/icon.png-7f71c46195796023d786f07146eb6c8b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Music Pitch Circle.png"
-dest_files=[ "res://.import/Music Pitch Circle.png-a922663ed2c5fd632f5dbaf2ba60177a.stex" ]
+source_file="res://addons/midi/icon.png"
+dest_files=[ "res://.import/icon.png-7f71c46195796023d786f07146eb6c8b.stex" ]
 
 [params]
 
