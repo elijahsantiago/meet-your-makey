@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="UI Tap"
-run/main_scene="res://Test2.tscn"
+run/main_scene="res://Main Scene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
