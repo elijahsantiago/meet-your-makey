@@ -1,32 +1,19 @@
 extends Sprite
 
-var center
-export(Vector2) var start_point
-export(int, 40, 220, 2) var direction
+export(int, 1, 6, 1) 	var position_value
+export(int, 40, 220, 2) var magnitude
+var start_point
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	center = get_parent().get_position()
-	
-	
-	
-	
-	print(center)
-	
-	
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
-	
-	start_point = _EndlineAngle(0,0,(1 * PI/3),direction) 
-	self.position = start_point;
-	
-	pass
+	start_point = _EndlineAngle(Vector2(0,0), (position_value * PI/3), magnitude) 
+	self.position = start_point
+	self.rotation = abs(get_parent().rotation)
 
-func _EndlineAngle(x, y, angle, length):
-
-	return Vector2(x+cos(angle)*length, y-sin(angle)*length)
-	pass
+func _EndlineAngle(vector, angle, length):
+	return Vector2(vector.x+cos(angle)*length, vector.y-sin(angle)*length)
 
 

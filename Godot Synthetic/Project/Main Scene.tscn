@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/circle-background2.png" type="Texture" id=2]
 [ext_resource path="res://DrawLine.gd" type="Script" id=3]
 [ext_resource path="res://Images/CircleW.png" type="Texture" id=4]
 [ext_resource path="res://KeyCircle.gd" type="Script" id=5]
-[ext_resource path="res://Music/CelloA.wav" type="AudioStream" id=6]
-[ext_resource path="res://AudioManager.gd" type="Script" id=7]
+[ext_resource path="res://Images/CircleA.png" type="Texture" id=6]
+[ext_resource path="res://Images/CircleS.png" type="Texture" id=7]
+[ext_resource path="res://Images/CircleD.png" type="Texture" id=8]
+[ext_resource path="res://Images/CircleF.png" type="Texture" id=9]
+[ext_resource path="res://Images/CircleG.png" type="Texture" id=10]
+[ext_resource path="res://Music/CelloA.wav" type="AudioStream" id=11]
+[ext_resource path="res://AudioManager.gd" type="Script" id=12]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -39,11 +44,44 @@ texture = ExtResource( 2 )
 [node name="Center" type="Node2D" parent="PanelContainer/Panel/Circle Background"]
 scale = Vector2( 1.11111, 1.11111 )
 script = ExtResource( 3 )
+rotation_range = 40
 
-[node name="Sprite" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+[node name="W Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+rotation = 4.4279
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
-direction = 220
+position_value = 1
+magnitude = 220
+
+[node name="A Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
+position_value = 2
+magnitude = 220
+
+[node name="S Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+texture = ExtResource( 7 )
+script = ExtResource( 5 )
+position_value = 3
+magnitude = 220
+
+[node name="D Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+texture = ExtResource( 8 )
+script = ExtResource( 5 )
+position_value = 4
+magnitude = 220
+
+[node name="F Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+texture = ExtResource( 9 )
+script = ExtResource( 5 )
+position_value = 5
+magnitude = 220
+
+[node name="G Key" type="Sprite" parent="PanelContainer/Panel/Circle Background/Center"]
+texture = ExtResource( 10 )
+script = ExtResource( 5 )
+position_value = 6
+magnitude = 220
 
 [node name="Node2D" type="Sprite" parent="."]
 visible = false
@@ -88,5 +126,5 @@ scale = Vector2( 0.4, 0.4 )
 texture = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-script = ExtResource( 7 )
+stream = ExtResource( 11 )
+script = ExtResource( 12 )
