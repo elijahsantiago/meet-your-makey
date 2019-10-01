@@ -439,15 +439,15 @@ custom_constants/separation = 10
 
 [node name="CenterContainer" type="CenterContainer" parent="Musical Container/VBoxContainer/Pitch Panel/VBoxContainer"]
 margin_right = 214.0
-margin_bottom = 25.0
+margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/CenterContainer"]
 margin_left = 91.0
-margin_top = 5.0
+margin_top = 3.0
 margin_right = 123.0
-margin_bottom = 19.0
+margin_bottom = 17.0
 text = "Pitch"
 align = 1
 valign = 1
