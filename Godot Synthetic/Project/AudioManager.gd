@@ -14,9 +14,20 @@ onready var key_d = get_tree().get_root().get_node("Root Node/PanelContainer/Pan
 onready var key_f = get_tree().get_root().get_node("Root Node/PanelContainer/Panel/Circle Background/Center/F Key");
 onready var key_g = get_tree().get_root().get_node("Root Node/PanelContainer/Panel/Circle Background/Center/G Key");
 
+onready var rotation_node = get_tree().get_root().get_node("Root Node/PanelContainer/Panel/Circle Background/Center");
+
 
 func _input(event):
 	if event is InputEventKey:
+		if event.is_pressed() == true and event.scancode == KEY_UP and not event.echo:
+			if rotation_node.rotation_range < 60:
+				rotation_node.rotation_range += 1;
+			
+		if event.is_pressed() == true and event.scancode == KEY_DOWN and not event.echo:
+			if rotation_node.rotation_range > 0:
+				rotation_node.rotation_range -= 1;
+		
+		
 		if event.is_pressed() == true and event.scancode == KEY_W and not event.echo:
 			key_w.isPressed = true
 			audio_w.play()
