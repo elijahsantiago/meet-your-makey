@@ -17,15 +17,27 @@ onready var key_g = get_tree().get_root().get_node("Root Node/PanelContainer/Pan
 onready var rotation_node = get_tree().get_root().get_node("Root Node/PanelContainer/Panel/Circle Background/Center");
 
 
+var pitch = 1;
+
+func _process(delta):
+	audio_w.pitch_scale = pitch
+	audio_a.pitch_scale = pitch
+	audio_s.pitch_scale = pitch
+	audio_d.pitch_scale = pitch
+	audio_f.pitch_scale = pitch
+	audio_g.pitch_scale = pitch
+
 func _input(event):
 	if event is InputEventKey:
 		if event.is_pressed() == true and event.scancode == KEY_UP and not event.echo:
 			if rotation_node.rotation_range < 60:
 				rotation_node.rotation_range += 1;
+				pitch += .02
 			
 		if event.is_pressed() == true and event.scancode == KEY_DOWN and not event.echo:
 			if rotation_node.rotation_range > 0:
 				rotation_node.rotation_range -= 1;
+				pitch -= .02
 		
 		
 		if event.is_pressed() == true and event.scancode == KEY_W and not event.echo:
