@@ -12,7 +12,7 @@ A common issue when teaching students about programming is that it doesn’t fee
 * Alex Smyntyna (presenter)
 * Hieu Dinh
 * James Broome
-* Khadijah Nixson
+* Khadijah Nixon
 # Installation:
 
 # Instructions:
