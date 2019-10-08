@@ -1,0 +1,90 @@
+
+
+
+void setup(){
+  size(581,581);
+  smooth();
+  
+  
+  //Draw Circle
+  PVector center = new PVector(290, 290);
+  float circle_diameter = 580;
+  float circle_radius = circle_diameter/2;
+  circle(center.x, center.y, circle_diameter);
+  
+  //Draw Horizontal Line
+  PVector endPointLine1 = new PVector(1,1);
+  
+  
+  endPointLine1.setMag(circle_radius);
+  
+  
+  
+  PVector endLine1 = endlineAngle(290, 290,(1 * PI/3), 290);
+  PVector endLine2 = endlineAngle(290, 290,(2 * PI/3), 290);
+  PVector endLine3 = endlineAngle(290, 290,(3 * PI/3), 290);
+  PVector endLine4 = endlineAngle(290, 290,(4 * PI/3), 290);
+  PVector endLine5 = endlineAngle(290, 290,(5 * PI/3), 290);
+  PVector endLine6 = endlineAngle(290, 290,(6 * PI/3), 290);
+  
+  line(center.x, center.y, endLine1.x, endLine1.y);
+  line(center.x, center.y, endLine2.x, endLine2.y);
+  line(center.x, center.y, endLine3.x, endLine3.y);
+  line(center.x, center.y, endLine4.x, endLine4.y);
+  line(center.x, center.y, endLine5.x, endLine5.y);
+  line(center.x, center.y, endLine6.x, endLine6.y);
+  
+  
+  float incrumentPitch = 60 / 10;
+  float currentAngle = 0;
+  
+  for(int x = 0; x < 6; x++){
+    
+    for(int y = 0; y < 10; y++){
+      currentAngle += incrumentPitch;
+      
+      float radian = currentAngle * (PI /180);
+      float length = 5;
+      PVector endLineCircle = endlineAngle(290, 290, radian, circle_radius);
+      PVector endLineTowardCenter = endlineAngle((int)endLineCircle.x, (int)endLineCircle.y, invertAngle(radian), length);
+      line(endLineCircle.x, endLineCircle.y, endLineTowardCenter.x, endLineTowardCenter.y);
+    }
+  
+  }
+  
+  DrawTriangleAtCenter(290,290,25);
+  
+  save("C:/Users/Hieu Dinh/Desktop/CircleObjectTest.png");
+
+}
+
+
+void lineAngle(int x, int y, float angle, float length)
+{
+  line(x, y, x+cos(angle)*length, y-sin(angle)*length);
+}
+
+PVector endlineAngle(int x, int y, float angle, float length)
+{
+  return new PVector(x+cos(angle)*length, y-sin(angle)*length);
+}
+
+float invertAngle(float angle) {
+  return (angle + PI) % (2 * PI);
+}
+
+void DrawTriangleAtCenter(int centerX, int centerY, int magnitude )
+{
+  PVector firstPoint = new PVector(0,0);
+  PVector secondPoint = new PVector(0,0);
+  PVector thirdPoint = new PVector(0,0);
+  
+  firstPoint = endlineAngle(centerX, centerY,(210 * (PI /180)), magnitude/2);
+  secondPoint = endlineAngle(centerX, centerY,(90 * (PI /180)), magnitude);
+  thirdPoint = endlineAngle(centerX, centerY, (330 * (PI /180)), magnitude/2);
+  
+  triangle( firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y);
+}
+
+
+
