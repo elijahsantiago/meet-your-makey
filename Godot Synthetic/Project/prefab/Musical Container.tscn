@@ -1,0 +1,511 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/Input Panel.gd" type="Script" id=1]
+[ext_resource path="res://Images/UpArrow.png" type="Texture" id=2]
+[ext_resource path="res://prefab/Volume Container.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/Speaker-0.svg" type="Texture" id=4]
+[ext_resource path="res://Images/Speaker-1.svg" type="Texture" id=5]
+[ext_resource path="res://Images/Speaker-2.svg" type="Texture" id=6]
+[ext_resource path="res://Images/Speaker-3.svg" type="Texture" id=7]
+
+[node name="Musical Container" type="PanelContainer"]
+margin_left = 2.84399
+margin_top = 2.0
+margin_right = 232.844
+margin_bottom = 600.0
+rect_min_size = Vector2( 230, 600 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 223.0
+margin_bottom = 593.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="W Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_right = 216.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/W Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/W Input Panel/HBoxContainer"]
+editor/display_folded = true
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/W Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 23.0
+margin_top = 23.0
+margin_right = 36.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "W"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/W Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/W Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/W Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/W Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "A"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 0
+
+[node name="A Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 65.0
+margin_right = 216.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/A Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/A Input Panel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/A Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 25.0
+margin_top = 23.0
+margin_right = 34.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "A"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/A Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/A Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/A Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/A Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "B"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 1
+
+[node name="S Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 130.0
+margin_right = 216.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/S Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/S Input Panel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/S Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 26.0
+margin_top = 23.0
+margin_right = 33.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "S"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/S Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/S Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/S Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/S Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "C"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 2
+
+[node name="D Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 195.0
+margin_right = 216.0
+margin_bottom = 255.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/D Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/D Input Panel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/D Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 25.0
+margin_top = 23.0
+margin_right = 35.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "D"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/D Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/D Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/D Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/D Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "D"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 3
+
+[node name="F Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 260.0
+margin_right = 216.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/F Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/F Input Panel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/F Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 26.0
+margin_top = 23.0
+margin_right = 33.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "F"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/F Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/F Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/F Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/F Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "E"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 4
+
+[node name="G Input Panel" type="Panel" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 325.0
+margin_right = 216.0
+margin_bottom = 385.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/G Input Panel"]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/G Input Panel/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/G Input Panel/HBoxContainer/CenterContainer"]
+margin_left = 25.0
+margin_top = 23.0
+margin_right = 35.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "G"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/G Input Panel/HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/G Input Panel/HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/G Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
+selected = 0
+
+[node name="OptionButton2" type="OptionButton" parent="VBoxContainer/G Input Panel/HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+text = "F"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 5
+
+[node name="Pitch Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 390.0
+margin_right = 216.0
+margin_bottom = 586.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Pitch Panel"]
+margin_right = 214.0
+margin_bottom = 193.0
+custom_constants/separation = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Pitch Panel/VBoxContainer"]
+editor/display_folded = true
+margin_right = 214.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Pitch Panel/VBoxContainer/CenterContainer"]
+margin_left = 91.0
+margin_top = 3.0
+margin_right = 123.0
+margin_bottom = 17.0
+text = "Pitch"
+align = 1
+valign = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Pitch Panel/VBoxContainer"]
+editor/display_folded = true
+margin_top = 30.0
+margin_right = 214.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2"]
+editor/display_folded = true
+margin_right = 60.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2/CenterContainer"]
+margin_left = 20.0
+margin_top = 7.0
+margin_right = 40.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 64.0
+margin_right = 214.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2/MarginContainer"]
+margin_right = 120.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
+margin_right = 120.0
+margin_bottom = 14.0
+text = "Increment:"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Pitch Panel/VBoxContainer/HBoxContainer2/MarginContainer/VBoxContainer"]
+margin_top = 19.0
+margin_right = 120.0
+margin_bottom = 35.0
+ticks_on_borders = true
+
+[node name="Volume Container" parent="VBoxContainer/Pitch Panel/VBoxContainer" instance=ExtResource( 3 )]
+texture_mode = {
+"volume0": ExtResource( 4 ),
+"volume1": ExtResource( 5 ),
+"volume2": ExtResource( 6 ),
+"volume3": ExtResource( 7 )
+}
