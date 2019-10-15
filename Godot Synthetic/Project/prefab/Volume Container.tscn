@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://prefab/Volume Control.gd" type="Script" id=1]
+[ext_resource path="res://script/Volume Control.gd" type="Script" id=1]
 [ext_resource path="res://Images/Speaker-0.svg" type="Texture" id=2]
 [ext_resource path="res://Images/Speaker-1.svg" type="Texture" id=3]
 [ext_resource path="res://Images/Speaker-2.svg" type="Texture" id=4]
 [ext_resource path="res://Images/Speaker-3.svg" type="Texture" id=5]
+
 
 [node name="Volume Container" type="HBoxContainer"]
 margin_top = 75.0

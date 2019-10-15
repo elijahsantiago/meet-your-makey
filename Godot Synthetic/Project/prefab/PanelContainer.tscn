@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="PanelContainer" type="PanelContainer"]
+editor/display_folded = true
+margin_left = 815.0
+margin_right = 1023.41
+margin_bottom = 600.0
+rect_min_size = Vector2( 208.41, 0 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 201.41
+margin_bottom = 593.0

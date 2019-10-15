@@ -10,9 +10,9 @@ var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
 
+
 func _ready():
 	self.position = _get_angle_position()
-	print(self.position)
 
 func _process(delta):
 	#Update object position if button is pressed
@@ -20,7 +20,7 @@ func _process(delta):
 		self.position = _get_angle_position()
 	
 	#Set object rotation to match parent rotation
-	self.rotation = abs(get_parent().rotation)
+	self.rotation = get_parent().rotation
 	
 	#Move key if pressed, reset if release
 	if(is_pressed and magnitude_percent > 0):
@@ -56,10 +56,15 @@ func _check_valid(event):
 
 func _input(event):
 	var audio = get_child(0);
-
+	
 	if _check_valid(event):
 		if event.is_pressed() == true and not event.echo:
 			is_pressed = true
+			if(get_parent().volume_control_ref.volume == 0):
+				audio.volume_db = -80
+			else:
+				audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
+			audio.pitch_scale = get_parent().pitch_control_ref.pitch
 			audio.play()
 		elif event.is_pressed() == false:
 			is_pressed = false
