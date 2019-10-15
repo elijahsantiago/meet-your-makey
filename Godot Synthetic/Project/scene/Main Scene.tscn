@@ -551,7 +551,6 @@ value = 1.0
 ticks_on_borders = true
 
 [node name="Volume Container" type="HBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer"]
-editor/display_folded = true
 margin_top = 95.0
 margin_right = 214.0
 margin_bottom = 130.0
@@ -583,7 +582,6 @@ expand = true
 stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container"]
-editor/display_folded = true
 margin_left = 64.0
 margin_right = 214.0
 margin_bottom = 35.0
@@ -608,7 +606,7 @@ text = "Volume:"
 margin_top = 19.0
 margin_right = 120.0
 margin_bottom = 35.0
-value = 20.0
+value = 50.0
 ticks_on_borders = true
 
 [node name="Visual Container" type="PanelContainer" parent="HBoxContainer"]

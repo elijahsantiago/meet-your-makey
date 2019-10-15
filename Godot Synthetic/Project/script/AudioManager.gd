@@ -17,6 +17,8 @@ func _ready():
 
 func _process(delta):
 	self.rotation_degrees = (((pitch - 0) * (60 - (-60))) / (2 - 0)) + (-60)
+	
+	
 
 func _input(event):
 	if event is InputEventKey:

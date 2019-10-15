@@ -15,6 +15,13 @@ func _ready():
 	self.position = _get_angle_position()
 
 func _process(delta):
+	var audio = get_child(0);
+	if(get_parent().volume_control_ref.volume == 0):
+		audio.volume_db = -80
+	else:
+		audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
+	audio.pitch_scale = get_parent().pitch_control_ref.pitch
+	
 	#Update object position if button is pressed
 	if(is_pressed):
 		self.position = _get_angle_position()
@@ -60,11 +67,7 @@ func _input(event):
 	if _check_valid(event):
 		if event.is_pressed() == true and not event.echo:
 			is_pressed = true
-			if(get_parent().volume_control_ref.volume == 0):
-				audio.volume_db = -80
-			else:
-				audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
-			audio.pitch_scale = get_parent().pitch_control_ref.pitch
+			
 			audio.play()
 		elif event.is_pressed() == false:
 			is_pressed = false
