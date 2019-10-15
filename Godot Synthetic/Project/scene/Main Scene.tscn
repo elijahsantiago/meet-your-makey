@@ -47,7 +47,6 @@ size_flags_horizontal = 3
 custom_constants/separation = 5
 
 [node name="W Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_right = 216.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 0, 60 )
@@ -99,6 +98,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -108,13 +109,14 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "A"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
 selected = 0
 
 [node name="A Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_top = 65.0
 margin_right = 216.0
 margin_bottom = 125.0
@@ -166,6 +168,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -175,13 +179,14 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "B"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
 selected = 1
 
 [node name="S Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_top = 130.0
 margin_right = 216.0
 margin_bottom = 190.0
@@ -233,6 +238,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -242,13 +249,14 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "C"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
 selected = 2
 
 [node name="D Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_top = 195.0
 margin_right = 216.0
 margin_bottom = 255.0
@@ -300,6 +308,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -309,13 +319,14 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "D"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
 selected = 3
 
 [node name="F Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_top = 260.0
 margin_right = 216.0
 margin_bottom = 320.0
@@ -367,6 +378,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -376,13 +389,14 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "E"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
 selected = 4
 
 [node name="G Input Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-editor/display_folded = true
 margin_top = 325.0
 margin_right = 216.0
 margin_bottom = 385.0
@@ -434,6 +448,8 @@ margin_right = 122.0
 margin_bottom = 28.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "Cello"
 align = 1
 items = [ "Cello", null, false, -1, null, "Guitar", null, false, -1, null, "Drum", null, false, -1, null ]
@@ -443,6 +459,8 @@ selected = 0
 margin_top = 33.0
 margin_right = 122.0
 margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
 text = "F"
 align = 1
 items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
@@ -455,12 +473,12 @@ margin_bottom = 586.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel"]
+margin_top = 10.0
 margin_right = 214.0
 margin_bottom = 193.0
 custom_constants/separation = 20
 
 [node name="Pitch Container" type="HBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer"]
-editor/display_folded = true
 margin_right = 214.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
