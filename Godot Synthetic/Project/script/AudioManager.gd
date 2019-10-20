@@ -3,7 +3,6 @@ extends Node2D
 export(NodePath) onready var pitch_control_ref  = get_node(pitch_control_ref)
 export(NodePath) onready var volume_control_ref  = get_node(volume_control_ref)
 
-
 export(int, -60, 60, 1) var rotation_range
 
 var volume

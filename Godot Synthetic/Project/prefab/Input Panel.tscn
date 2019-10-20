@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://script/Input Panel.gd" type="Script" id=1]
+
+[node name="Input Panel" type="Panel"]
+margin_right = 216.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+instrument_ref = NodePath("HBoxContainer/MarginContainer/VBoxContainer/Instrument")
+note_ref = NodePath("HBoxContainer/MarginContainer/VBoxContainer/Instrument Key")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/CenterContainer"]
+margin_left = 23.0
+margin_top = 23.0
+margin_right = 36.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "W"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 64.0
+margin_right = 216.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 30
+custom_constants/margin_left = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+margin_right = 122.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Instrument" type="OptionButton" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 8.0
+margin_right = 122.0
+margin_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 1
+enabled_focus_mode = 1
+text = "Cello"
+align = 1
+items = [ "Cello", null, false, -1, null, "Guitar", null, true, -1, null, "Drum", null, true, -1, null ]
+selected = 0
+
+[node name="Instrument Key" type="OptionButton" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 122.0
+margin_bottom = 53.0
+focus_mode = 1
+enabled_focus_mode = 1
+text = "A"
+align = 1
+items = [ "A", null, false, -1, null, "B", null, false, -1, null, "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null ]
+selected = 0
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/VBoxContainer/Instrument" to="." method="_on_Instrument_item_selected"]
+[connection signal="item_selected" from="HBoxContainer/MarginContainer/VBoxContainer/Instrument Key" to="." method="_on_Instrument_Key_item_selected"]

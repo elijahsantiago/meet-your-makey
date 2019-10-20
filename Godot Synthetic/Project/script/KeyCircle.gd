@@ -10,17 +10,19 @@ var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
 
+var audio = get_child(0)
+
+export(AudioStream) onready var test
 
 func _ready():
 	self.position = _get_angle_position()
 
 func _process(delta):
-	var audio = get_child(0);
-	if(get_parent().volume_control_ref.volume == 0):
-		audio.volume_db = -80
-	else:
-		audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
-	audio.pitch_scale = get_parent().pitch_control_ref.pitch
+	#if(get_parent().volume_control_ref.volume == 0):
+	#	audio.volume_db = -80
+	#else:
+	#	audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
+	#audio.pitch_scale = get_parent().pitch_control_ref.pitch
 	
 	#Update object position if button is pressed
 	if(is_pressed):
@@ -61,9 +63,13 @@ func _check_valid(event):
 		else:
 			return false
 
-func _input(event):
-	var audio = get_child(0);
+func _set_sound_file(audio_file):
+	print(audio_file)
+	print(audio.name)
+	#audio.stream = load("res://Music/CelloA.wav")
 	
+
+func _input(event):
 	if _check_valid(event):
 		if event.is_pressed() == true and not event.echo:
 			is_pressed = true
