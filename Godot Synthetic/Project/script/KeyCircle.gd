@@ -10,10 +10,6 @@ var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
 
-var audio = get_child(0)
-
-export(AudioStream) onready var test
-
 func _ready():
 	self.position = _get_angle_position()
 
@@ -64,17 +60,15 @@ func _check_valid(event):
 			return false
 
 func _set_sound_file(audio_file):
-	print(audio_file)
-	print(audio.name)
+	#print(audio_file)
+	#print(audio.name)
 	#audio.stream = load("res://Music/CelloA.wav")
-	
+	pass
 
 func _input(event):
 	if _check_valid(event):
 		if event.is_pressed() == true and not event.echo:
 			is_pressed = true
 			
-			audio.play()
 		elif event.is_pressed() == false:
 			is_pressed = false
-			audio.stop()

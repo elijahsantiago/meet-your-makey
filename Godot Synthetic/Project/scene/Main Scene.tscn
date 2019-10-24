@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://prefab/Input Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/Pitch Control.gd" type="Script" id=2]
@@ -11,18 +11,13 @@
 [ext_resource path="res://Images/circle-background2.png" type="Texture" id=9]
 [ext_resource path="res://script/AudioManager.gd" type="Script" id=10]
 [ext_resource path="res://prefab/Key.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Images/CircleW.png" type="Texture" id=12]
-[ext_resource path="res://Music/CelloA.wav" type="AudioStream" id=13]
-[ext_resource path="res://Images/CircleA.png" type="Texture" id=14]
-[ext_resource path="res://Music/CelloB.wav" type="AudioStream" id=15]
-[ext_resource path="res://Images/CircleS.png" type="Texture" id=16]
-[ext_resource path="res://Music/CelloC.wav" type="AudioStream" id=17]
-[ext_resource path="res://Images/CircleD.png" type="Texture" id=18]
-[ext_resource path="res://Music/CelloD.wav" type="AudioStream" id=19]
-[ext_resource path="res://Images/CircleF.png" type="Texture" id=20]
-[ext_resource path="res://Music/CelloE.wav" type="AudioStream" id=21]
-[ext_resource path="res://Images/CircleG.png" type="Texture" id=22]
-[ext_resource path="res://Music/CelloF.wav" type="AudioStream" id=23]
+[ext_resource path="res://Images/A.png" type="Texture" id=12]
+[ext_resource path="res://Images/B.png" type="Texture" id=13]
+[ext_resource path="res://Images/C.png" type="Texture" id=14]
+[ext_resource path="res://Images/D.png" type="Texture" id=15]
+[ext_resource path="res://Images/E.png" type="Texture" id=16]
+[ext_resource path="res://Images/F.png" type="Texture" id=17]
+[ext_resource path="res://new_script.gd" type="Script" id=18]
 
 [node name="Root Node" type="Node2D"]
 
@@ -322,54 +317,44 @@ scale = Vector2( 1.11111, 1.11111 )
 script = ExtResource( 10 )
 pitch_control_ref = NodePath("../../../../Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container")
 volume_control_ref = NodePath("../../../../Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container")
+timer_ref = NodePath("Timer")
 
 [node name="W Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( 110, -191 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 12 )
-
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/W Key" index="0"]
-stream = ExtResource( 13 )
-volume_db = -80.0
 
 [node name="A Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( -110, -191 )
-texture = ExtResource( 14 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 13 )
 key = 2
-
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/A Key" index="0"]
-stream = ExtResource( 15 )
 
 [node name="S Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( -220, 0 )
-texture = ExtResource( 16 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 14 )
 key = 3
-
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/S Key" index="0"]
-stream = ExtResource( 17 )
 
 [node name="D Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( -110, 191 )
-texture = ExtResource( 18 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 15 )
 key = 4
-
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/D Key" index="0"]
-stream = ExtResource( 19 )
 
 [node name="F Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( 110, 191 )
-texture = ExtResource( 20 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 16 )
 key = 5
-
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/F Key" index="0"]
-stream = ExtResource( 21 )
 
 [node name="G Key" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center" instance=ExtResource( 11 )]
 position = Vector2( 220, 0 )
-texture = ExtResource( 22 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 17 )
 key = 6
 
-[node name="Note" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center/G Key" index="0"]
-stream = ExtResource( 23 )
+[node name="Timer" type="Timer" parent="HBoxContainer/Visual Container/Panel/Circle Background/Center"]
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 editor/display_folded = true
@@ -385,6 +370,8 @@ margin_right = 201.41
 margin_bottom = 593.0
 
 [node name="Node" type="Node" parent="."]
+script = ExtResource( 18 )
+audio_manager = NodePath("../HBoxContainer/Visual Container/Panel/Circle Background/Center")
 [connection signal="value_changed" from="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer/pitch_shift_slider" to="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container" method="_on_pitch_shift_slider_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer/pitch_slider" to="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container" method="_on_pitch_slider_value_changed"]
 [connection signal="value_changed" from="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container/MarginContainer/VBoxContainer/HSlider" to="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container" method="_on_HSlider_value_changed"]
