@@ -2,12 +2,12 @@ extends Node
 
 #Dictionary
 export(Dictionary) onready var drum_dictionary = {
-	"C": AudioStreamSample,
-	"D": AudioStreamSample,
-	"E": AudioStreamSample,
-	"F": AudioStreamSample,
-	"G": AudioStreamSample,
-	"A": AudioStreamSample}
+	"C": load("res://Music/Drum/C.wav"),
+	"D": load("res://Music/Drum/D.wav"),
+	"E": load("res://Music/Drum/E.wav"),
+	"F": load("res://Music/Drum/F.wav"),
+	"G": load("res://Music/Drum/G.wav"),
+	"A": load("res://Music/Drum/A.wav")}
 export(Dictionary) onready var cello_dictionary = {
 	"C": load("res://Music/Cello/C.wav"),
 	"D": load("res://Music/Cello/D.wav"),
@@ -52,6 +52,7 @@ func _ready():
 
 func _process(delta):
 	time_now = OS.get_unix_time()
+	#print(ref_key_c.name)
 	_process_time()
 
 func _process_time():
@@ -60,51 +61,44 @@ func _process_time():
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
-
 func _input(event):
 	if event is InputEventKey:
 		match event.scancode:
 			KEY_W:
 				var key_ref = _get_key_ref("W")
-				var sound_ref = _get_sound("W")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_A:
 				var key_ref = _get_key_ref("A")
-				var sound_ref = _get_sound("A")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_S:
 				var key_ref = _get_key_ref("S")
-				var sound_ref = _get_sound("S")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_D:
 				var key_ref = _get_key_ref("D")
-				var sound_ref = _get_sound("D")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_F:
 				var key_ref = _get_key_ref("F")
-				var sound_ref = _get_sound("F")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_G:
 				var key_ref = _get_key_ref("G")
-				var sound_ref = _get_sound("G")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref)
-				elif event.is_pressed() == false:
+					key_ref._play_music()
+				elif event.is_pressed() == false and instrument != "Drum":
 					key_ref._stop_music()
 			KEY_UP:
 				if pitch < 2:
@@ -116,22 +110,6 @@ func _input(event):
 					pitch -= pitch_shift
 					ref_pitch_control.ref_pitch_slider.value = pitch
 
-
-func _get_sound(value):
-	match instrument:
-		"Cello":
-			if key_input_dictionary[value] == "C":
-				return cello_dictionary["C"]
-			elif key_input_dictionary[value] == "D":
-				return cello_dictionary["D"]
-			elif key_input_dictionary[value] == "E":
-				return cello_dictionary["E"]
-			elif key_input_dictionary[value] == "F":
-				return cello_dictionary["F"]
-			elif key_input_dictionary[value] == "G":
-				return cello_dictionary["G"]
-			elif key_input_dictionary[value] == "A":
-				return cello_dictionary["A"]
 
 func _get_key_ref(value):
 	if key_input_dictionary[value] == "C":
