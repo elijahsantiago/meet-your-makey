@@ -25,6 +25,7 @@ func _ready():
 	pitch_shift_value = ref_pitch_shift_slider.value
 	pitch_value = ref_pitch_slider.value
 	
+	AudioManager.ref_pitch_control = self;
 	AudioManager.pitch = pitch_value
 	AudioManager.pitch_shift = pitch_shift_value
 
@@ -49,7 +50,11 @@ func pitch_value_set(value):
 	if Engine.editor_hint:
 		pitch_value = value
 		if has_node(path_pitch_slider):
-			get_node(path_pitch_slider).value = value 
+			get_node(path_pitch_slider).value = value
+	if not Engine.editor_hint:
+		pitch_value = value
+		if has_node(path_pitch_slider):
+			get_node(path_pitch_slider).value = value
 
 func _on_pitch_slider_value_changed(value):
 	AudioManager.pitch = pitch_value

@@ -6,6 +6,7 @@ export(Key_Identifier) var key
 export(float, 0, 1, .01) var magnitude_incrument = .01
 export(float, 0, 1, .01) var magnitude_percent = 1
 
+var player
 var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
@@ -54,3 +55,17 @@ func _get_angle_position():
 	var radian = key * PI/3
 	var magnitue_value = ((magnitude_max - magnitude_min) * magnitude_percent) + magnitude_min
 	return Vector2(center.x+cos(radian) * magnitue_value, center.y-sin(radian) * magnitue_value)
+
+func _play_music(sound, volume, pitch):
+	is_pressed = true
+	player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = sound
+	player.volume_db = volume
+	player.pitch_scale = pitch
+	player.play()
+	
+func _stop_music():
+	is_pressed = false
+	player.stop()
+	self.remove_child(player)

@@ -1,4 +1,3 @@
-tool
 extends Panel
 
 export(String) var input_key setget input_key_set

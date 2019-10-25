@@ -2,9 +2,19 @@ extends Node
 
 #Dictionary
 export(Dictionary) onready var drum_dictionary = {
-	"C": AudioStreamSample,"D": AudioStreamSample,"E": AudioStreamSample,"F": AudioStreamSample,"G": AudioStreamSample,"A": AudioStreamSample}
+	"C": AudioStreamSample,
+	"D": AudioStreamSample,
+	"E": AudioStreamSample,
+	"F": AudioStreamSample,
+	"G": AudioStreamSample,
+	"A": AudioStreamSample}
 export(Dictionary) onready var cello_dictionary = {
-	"C": load("res://Music/CelloA.wav"),"D": AudioStreamSample,"E": AudioStreamSample,"F": AudioStreamSample,"G": AudioStreamSample,"A": AudioStreamSample}
+	"C": load("res://Music/Cello/C.wav"),
+	"D": load("res://Music/Cello/D.wav"),
+	"E": load("res://Music/Cello/E.wav"),
+	"F": load("res://Music/Cello/F.wav"),
+	"G": load("res://Music/Cello/G.wav"),
+	"A": load("res://Music/Cello/A.wav")}
 var key_input_dictionary = {}
 
 #Audio Node Ref
@@ -36,15 +46,8 @@ var pitch_shift
 
 
 func _ready():
-	var player = AudioStreamPlayer.new()
-	self.add_child(player)
-	#var note = key_input_dictionary[_get_key_ref("W")]
-	print(cello_dictionary["C"])
-	player.stream = cello_dictionary["C"]
-	player.volume_db = 50
-	player.play()
-	
 	#Start Timer
+	instrument = "Cello"
 	time_start = OS.get_unix_time()
 
 func _process(delta):
@@ -62,37 +65,72 @@ func _input(event):
 	if event is InputEventKey:
 		match event.scancode:
 			KEY_W:
+				var key_ref = _get_key_ref("W")
+				var sound_ref = _get_sound("W")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("W").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("W").is_pressed = false
+					key_ref._stop_music()
 			KEY_A:
+				var key_ref = _get_key_ref("A")
+				var sound_ref = _get_sound("A")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("A").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("A").is_pressed = false
+					key_ref._stop_music()
 			KEY_S:
+				var key_ref = _get_key_ref("S")
+				var sound_ref = _get_sound("S")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("S").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("S").is_pressed = false
+					key_ref._stop_music()
 			KEY_D:
+				var key_ref = _get_key_ref("D")
+				var sound_ref = _get_sound("D")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("D").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("D").is_pressed = false
+					key_ref._stop_music()
 			KEY_F:
+				var key_ref = _get_key_ref("F")
+				var sound_ref = _get_sound("F")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("F").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("F").is_pressed = false
+					key_ref._stop_music()
 			KEY_G:
+				var key_ref = _get_key_ref("G")
+				var sound_ref = _get_sound("G")
 				if event.is_pressed() == true and not event.echo:
-					_get_key_ref("G").is_pressed = true
+					key_ref._play_music(sound_ref, volume, pitch)
 				elif event.is_pressed() == false:
-					_get_key_ref("G").is_pressed = false
-			
+					key_ref._stop_music()
+			KEY_UP:
+				if pitch < 2:
+					pitch += pitch_shift
+					ref_pitch_control.pitch_value_set(pitch)
+			KEY_DOWN:
+				if pitch < 2:
+					pitch -= pitch_shift
+					ref_pitch_control.pitch_value_set(pitch)
 
+
+func _get_sound(value):
+	match instrument:
+		"Cello":
+			if key_input_dictionary[value] == "C":
+				return cello_dictionary["C"]
+			elif key_input_dictionary[value] == "D":
+				return cello_dictionary["D"]
+			elif key_input_dictionary[value] == "E":
+				return cello_dictionary["E"]
+			elif key_input_dictionary[value] == "F":
+				return cello_dictionary["F"]
+			elif key_input_dictionary[value] == "G":
+				return cello_dictionary["G"]
+			elif key_input_dictionary[value] == "A":
+				return cello_dictionary["A"]
 
 func _get_key_ref(value):
 	if key_input_dictionary[value] == "C":

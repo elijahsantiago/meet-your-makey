@@ -26,16 +26,17 @@ func _ready():
 	volume_value = ref_slider.value
 	_set_texture(ref_slider.value)
 	ref_label.text = str("Volume: ", ref_slider.value)
+	AudioManager.ref_volume_control = self
 	AudioManager.volume = volume_value
 	
 func _on_HSlider_value_changed(value):
-	AudioManager.volume = value
 	if Engine.editor_hint:
 		if has_node(path_label):
 			volume_value = value
 			get_node(path_label).text = str("Volume: ", value)
 	
 	if not Engine.editor_hint:
+		AudioManager.volume = value
 		volume_value = value
 		_set_texture(value)
 		ref_label.text = str("Volume: ", value)
