@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pitch.svg-73df24372024ef2546dadafa0bdfdb0c.stex"
+path="res://.import/C.png-612ecfe9696e5dcd1432feffa24f57d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/pitch.svg"
-dest_files=[ "res://.import/pitch.svg-73df24372024ef2546dadafa0bdfdb0c.stex" ]
+source_file="res://Images/Letter/C.png"
+dest_files=[ "res://.import/C.png-612ecfe9696e5dcd1432feffa24f57d2.stex" ]
 
 [params]
 
@@ -20,14 +20,14 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
-flags/mipmaps=true
+flags/filter=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=true
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

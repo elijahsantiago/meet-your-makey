@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://script/AudioManager.gd" type="Script" id=1]
+[ext_resource path="res://Music/CelloD.wav" type="AudioStream" id=2]
+[ext_resource path="res://Music/CelloE.wav" type="AudioStream" id=3]
+[ext_resource path="res://Music/CelloF.wav" type="AudioStream" id=4]
+[ext_resource path="res://Music/CelloG.wav" type="AudioStream" id=5]
+[ext_resource path="res://Music/CelloA.wav" type="AudioStream" id=6]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource( 1 )
+cello_dictionary = {
+"A": ExtResource( 6 ),
+"C": "test",
+"D": ExtResource( 2 ),
+"E": ExtResource( 3 ),
+"F": ExtResource( 4 ),
+"G": ExtResource( 5 )
+}

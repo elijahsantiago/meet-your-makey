@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CircleS.png-d7e56e7f102510bee98e5042d1ac112f.stex"
+path="res://.import/Speaker-1.svg-869bab875998203f7b067e56d3a3eb0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/CircleS.png"
-dest_files=[ "res://.import/CircleS.png-d7e56e7f102510bee98e5042d1ac112f.stex" ]
+source_file="res://Images/UI/Speaker-1.svg"
+dest_files=[ "res://.import/Speaker-1.svg-869bab875998203f7b067e56d3a3eb0c.stex" ]
 
 [params]
 
@@ -21,14 +21,14 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=false
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
-process/invert_color=false
+process/invert_color=true
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

@@ -1,6 +1,6 @@
 extends Sprite
 
-enum Key_Identifier { W = 1, A = 2, S = 3, D = 4, F = 5, G = 6}
+enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5}
 
 export(Key_Identifier) var key
 export(float, 0, 1, .01) var magnitude_incrument = .01
@@ -11,6 +11,19 @@ var magnitude_min = 40
 var magnitude_max = 220
 
 func _ready():
+	if(key == 0):
+		AudioManager.ref_key_c = self
+	elif(key == 1):
+		AudioManager.ref_key_d = self
+	elif(key == 2):
+		AudioManager.ref_key_e = self
+	elif(key == 3):
+		AudioManager.ref_key_f = self
+	elif(key == 4):
+		AudioManager.ref_key_g = self
+	elif(key == 5):
+		AudioManager.ref_key_a = self
+	
 	self.position = _get_angle_position()
 
 func _process(delta):
@@ -41,34 +54,3 @@ func _get_angle_position():
 	var radian = key * PI/3
 	var magnitue_value = ((magnitude_max - magnitude_min) * magnitude_percent) + magnitude_min
 	return Vector2(center.x+cos(radian) * magnitue_value, center.y-sin(radian) * magnitue_value)
-
-func _check_valid(event):
-	if event is InputEventKey:
-		if event.scancode == KEY_W and key == 1:
-			return true
-		elif event.scancode == KEY_A and key == 2:
-			return true
-		elif event.scancode == KEY_S and key == 3:
-			return true
-		elif event.scancode == KEY_D and key == 4:
-			return true
-		elif event.scancode == KEY_F and key == 5:
-			return true
-		elif event.scancode == KEY_G and key == 6:
-			return true
-		else:
-			return false
-
-func _set_sound_file(audio_file):
-	#print(audio_file)
-	#print(audio.name)
-	#audio.stream = load("res://Music/CelloA.wav")
-	pass
-
-func _input(event):
-	if _check_valid(event):
-		if event.is_pressed() == true and not event.echo:
-			is_pressed = true
-			
-		elif event.is_pressed() == false:
-			is_pressed = false

@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://script/Pitch Control.gd" type="Script" id=1]
-[ext_resource path="res://Images/pitch.svg" type="Texture" id=2]
+[ext_resource path="res://Images/UI/pitch.svg" type="Texture" id=2]
 
 [node name="Pitch Container" type="HBoxContainer"]
 margin_right = 214.0
 margin_bottom = 75.0
 size_flags_horizontal = 3
 script = ExtResource( 1 )
-pitch_shift_value = 1
-pitch_value = 1
+pitch_shift_value = 0.5
+pitch_value = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 60.0

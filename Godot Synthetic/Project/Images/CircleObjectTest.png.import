@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CircleD.png-87de0e8478554e42b809e4d5e64cf531.stex"
+path="res://.import/CircleObjectTest.png-58017bce15d8fb2df065f357261542e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/CircleD.png"
-dest_files=[ "res://.import/CircleD.png-87de0e8478554e42b809e4d5e64cf531.stex" ]
+source_file="res://Images/CircleObjectTest.png"
+dest_files=[ "res://.import/CircleObjectTest.png-58017bce15d8fb2df065f357261542e5.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
