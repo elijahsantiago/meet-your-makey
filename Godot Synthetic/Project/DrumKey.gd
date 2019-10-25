@@ -6,9 +6,21 @@ export(Key_Identifier) var key
 
 var player
 var is_pressed = false
+var timer_t = null
 
 
 func _process(delta):
+	
+	if timer_t != null and timer_t.time_left > .1:
+		self.rect_scale.x -= (1.0/delta) * .0003
+		self.rect_scale.y -= (1.0/delta) * .0003
+	elif timer_t != null:
+		timer_t = null
+		self.remove_child(timer_t)
+		self.rect_scale.x = 1
+		self.rect_scale.y = 1
+		
+	
 	if player != null and player.playing == true:
 		player.pitch_scale = float(AudioManager.pitch)
 		if(AudioManager.volume == 0):
@@ -27,6 +39,12 @@ func _play_music():
 	is_pressed = true
 	player = AudioStreamPlayer.new()
 	self.add_child(player)
+	
+	timer_t = Timer.new()
+	self.add_child(timer_t)
+	timer_t.start(.5)
+	self.rect_scale.x = 1
+	self.rect_scale.y = 1
 	
 	match key:
 		0:
