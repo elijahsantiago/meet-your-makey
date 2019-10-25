@@ -1,33 +1,61 @@
+tool
 extends HBoxContainer
 
-export(NodePath) onready var pitch_shift_label_ref = get_node(pitch_shift_label_ref)
-export(NodePath) onready var pitch_shift_slider_ref = get_node(pitch_shift_slider_ref)
-export(NodePath) onready var pitch_label_ref = get_node(pitch_label_ref)
-export(NodePath) onready var pitch_slider_ref = get_node(pitch_slider_ref)
+#Node Path Ref
+var path_pitch_shift_label = "MarginContainer/VBoxContainer/pitch_shift_label"
+var path_pitch_shift_slider = "MarginContainer/VBoxContainer/pitch_shift_slider"
+var path_pitch_label = "MarginContainer/VBoxContainer/pitch_label"
+var path_pitch_slider = "MarginContainer/VBoxContainer/pitch_slider"
+
+#Node Ref
+onready var ref_pitch_shift_label = get_node(path_pitch_shift_label)
+onready var ref_pitch_shift_slider = get_node(path_pitch_shift_slider)
+onready var ref_pitch_label = get_node(path_pitch_label)
+onready var ref_pitch_slider = get_node(path_pitch_slider)
+
+export(int, 0, 2, .05) var pitch_shift_value setget pitch_shift_value_set
+export(int, 0, 2, .1) var pitch_value setget pitch_value_set
 
 
-var pitch
-var pitch_shift
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pitch_shift_label_ref.text = str("Pitch Shift: ", pitch_shift_slider_ref.value)
-	pitch_label_ref.text = str("Pitch: ", pitch_slider_ref.value)
-	pitch_shift = pitch_shift_slider_ref.value
-	pitch = pitch_slider_ref.value
-	pass # Replace with function body.
+	ref_pitch_shift_label.text = str("Pitch Shift: ", ref_pitch_shift_slider.value)
+	ref_pitch_label.text = str("Pitch: ", ref_pitch_slider.value)
+	pitch_shift_value = ref_pitch_shift_slider.value
+	pitch_value = ref_pitch_slider.value
 
-
+func pitch_shift_value_set(value):
+	if Engine.editor_hint:
+		if has_node(path_pitch_shift_slider):
+			pitch_shift_value = value
+			get_node(path_pitch_shift_slider).value = value 
 
 func _on_pitch_shift_slider_value_changed(value):
-	pitch_shift_label_ref.text = str("Pitch Shift: ", value)
-	pitch_shift = value
-	audio_manager_ref.pitch_shift = value
-	pass
+	if Engine.editor_hint:
+		if has_node(path_pitch_shift_label):
+			pitch_shift_value = value
+			get_node(path_pitch_shift_label).text = str("Pitch Shift: ", value)
+	
+	if not Engine.editor_hint:
+		pitch_shift_value = value
+		ref_pitch_shift_label.text = str("Pitch Shift: ", value)
 
+func pitch_value_set(value):
+	if Engine.editor_hint:
+		pitch_value = value
+		if has_node(path_pitch_slider):
+			get_node(path_pitch_slider).value = value 
 
 func _on_pitch_slider_value_changed(value):
-	pitch_label_ref.text = str("Pitch: ", value)
-	pitch = value
-	audio_manager_ref.pitch = value
-	pass
+	if Engine.editor_hint:
+		if has_node(path_pitch_label):
+			pitch_value = value
+			get_node(path_pitch_label).text = str("Pitch: ", value)
+	
+	if not Engine.editor_hint:
+		pitch_value = value
+		ref_pitch_label.text = str("Pitch: ", value)
+
+
+
+

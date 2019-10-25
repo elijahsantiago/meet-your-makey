@@ -50,7 +50,6 @@ func _set_texture(value):
 
 func volume_value_set(value):
 	if Engine.editor_hint:
-		volume_value = value
 		
 		if has_node(path_slider):
 			get_node(path_slider).value = value

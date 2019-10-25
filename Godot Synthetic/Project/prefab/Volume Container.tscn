@@ -16,7 +16,6 @@ volume0 = ExtResource( 2 )
 volume1 = ExtResource( 3 )
 volume2 = ExtResource( 4 )
 volume3 = ExtResource( 5 )
-volume_value = 25.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 60.0
