@@ -51,6 +51,7 @@ margin_right = 120.0
 margin_bottom = 35.0
 max_value = 0.5
 step = 0.005
+value = 0.25
 ticks_on_borders = true
 
 [node name="pitch_label" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -65,6 +66,7 @@ margin_right = 120.0
 margin_bottom = 75.0
 max_value = 2.0
 step = 0.05
+value = 1.0
 ticks_on_borders = true
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/pitch_shift_slider" to="." method="_on_pitch_shift_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/pitch_slider" to="." method="_on_pitch_slider_value_changed"]

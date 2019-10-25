@@ -28,11 +28,12 @@ func _ready():
 	self.position = _get_angle_position()
 
 func _process(delta):
-	#if(get_parent().volume_control_ref.volume == 0):
-	#	audio.volume_db = -80
-	#else:
-	#	audio.volume_db = ((24 - (-40)) * (get_parent().volume_control_ref.volume/100)) + (-40) 
-	#audio.pitch_scale = get_parent().pitch_control_ref.pitch
+	if player != null and player.playing == true:
+		player.pitch_scale = float(AudioManager.pitch)
+		if(AudioManager.volume == 0):
+			player.volume_db = -80
+		else:
+			player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
 	
 	#Update object position if button is pressed
 	if(is_pressed):
@@ -56,15 +57,16 @@ func _get_angle_position():
 	var magnitue_value = ((magnitude_max - magnitude_min) * magnitude_percent) + magnitude_min
 	return Vector2(center.x+cos(radian) * magnitue_value, center.y-sin(radian) * magnitue_value)
 
-func _play_music(sound, volume, pitch):
+func _play_music(sound):
 	is_pressed = true
 	player = AudioStreamPlayer.new()
 	self.add_child(player)
 	player.stream = sound
-	player.volume_db = volume
-	player.pitch_scale = pitch
+	player.volume_db = AudioManager.volume
+	player.pitch_scale = AudioManager.pitch
 	player.play()
-	
+
+
 func _stop_music():
 	is_pressed = false
 	player.stop()

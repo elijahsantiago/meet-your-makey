@@ -68,52 +68,53 @@ func _input(event):
 				var key_ref = _get_key_ref("W")
 				var sound_ref = _get_sound("W")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_A:
 				var key_ref = _get_key_ref("A")
 				var sound_ref = _get_sound("A")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_S:
 				var key_ref = _get_key_ref("S")
 				var sound_ref = _get_sound("S")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_D:
 				var key_ref = _get_key_ref("D")
 				var sound_ref = _get_sound("D")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_F:
 				var key_ref = _get_key_ref("F")
 				var sound_ref = _get_sound("F")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_G:
 				var key_ref = _get_key_ref("G")
 				var sound_ref = _get_sound("G")
 				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music(sound_ref, volume, pitch)
+					key_ref._play_music(sound_ref)
 				elif event.is_pressed() == false:
 					key_ref._stop_music()
 			KEY_UP:
 				if pitch < 2:
 					pitch += pitch_shift
-					ref_pitch_control.pitch_value_set(pitch)
+					ref_pitch_control.ref_pitch_slider.value = pitch
+					
 			KEY_DOWN:
-				if pitch < 2:
+				if pitch > 0:
 					pitch -= pitch_shift
-					ref_pitch_control.pitch_value_set(pitch)
+					ref_pitch_control.ref_pitch_slider.value = pitch
 
 
 func _get_sound(value):

@@ -136,19 +136,22 @@ margin_bottom = 193.0
 custom_constants/separation = 20
 
 [node name="Pitch Container" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer" instance=ExtResource( 2 )]
-editor/display_folded = true
-pitch_shift_value = 0
-pitch_value = 0
+
+[node name="pitch_shift_label" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer" index="0"]
+text = "Pitch Shift: 0.25"
 
 [node name="pitch_shift_slider" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer" index="1"]
-value = 0.0
+focus_mode = 1
+focus_mode = 1
 
 [node name="pitch_slider" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer" index="3"]
-value = 0.0
+focus_mode = 1
+focus_mode = 1
 
 [node name="Volume Container" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 95.0
 margin_bottom = 130.0
+volume_value = 5.0
 
 [node name="TextureRect" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container/CenterContainer" index="0"]
 texture = ExtResource( 4 )
@@ -157,7 +160,9 @@ texture = ExtResource( 4 )
 text = "Volume: 5"
 
 [node name="HSlider" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Volume Container/MarginContainer/VBoxContainer" index="1"]
+focus_mode = 1
 value = 5.0
+focus_mode = 1
 
 [node name="Visual Container" type="PanelContainer" parent="HBoxContainer"]
 margin_left = 227.0
