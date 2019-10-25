@@ -13,9 +13,6 @@ var magnitude_max = 220
 
 
 func _ready():
-	if AudioManager.instrument == "Cello":
-		_on_TabContainer_tab_changed(0)
-	
 	self.position = _get_angle_position()
 
 func _process(delta):
@@ -77,18 +74,18 @@ func _stop_music():
 	player.stop()
 	self.remove_child(player)
 
-func _on_TabContainer_tab_changed(tab):
-	if(AudioManager.instrument == "Cello"):
-		print(str(tab, ":" , key))
-		if(key == 0):
-			AudioManager.ref_key_c = self
-		elif(key == 1):
-			AudioManager.ref_key_d = self
-		elif(key == 2):
-			AudioManager.ref_key_e = self
-		elif(key == 3):
-			AudioManager.ref_key_f = self
-		elif(key == 4):
-			AudioManager.ref_key_g = self
-		elif(key == 5):
-			AudioManager.ref_key_a = self
+#func _on_TabContainer_tab_changed(tab):
+#	if(AudioManager.instrument == "Cello"):
+#		print(str(tab, ":" , key))
+#		if(key == 0):
+#			AudioManager.ref_key_c = self
+#		elif(key == 1):
+#			AudioManager.ref_key_d = self
+#		elif(key == 2):
+#			AudioManager.ref_key_e = self
+#		elif(key == 3):
+#			AudioManager.ref_key_f = self
+#		elif(key == 4):
+#			AudioManager.ref_key_g = self
+#		elif(key == 5):
+#			AudioManager.ref_key_a = self

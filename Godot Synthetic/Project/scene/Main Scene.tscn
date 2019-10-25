@@ -45,6 +45,9 @@ margin_bottom = 260.0
 [node name="W Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 
+[node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
+
 [node name="A Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 44.0
@@ -59,6 +62,7 @@ text = "A"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/A Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "D"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 1
 
 [node name="S Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -75,6 +79,7 @@ text = "S"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/S Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "E"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 2
 
 [node name="D Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -91,6 +96,7 @@ text = "D"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/D Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "F"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 3
 
 [node name="F Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -107,6 +113,7 @@ text = "F"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/F Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "G"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 4
 
 [node name="G Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -123,6 +130,7 @@ text = "G"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/G Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "A"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 5
 
 [node name="Pitch Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
@@ -180,9 +188,20 @@ margin_right = 573.0
 margin_bottom = 597.0
 tab_align = 0
 script = ExtResource( 5 )
+ref_cello_c = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/C Note")
+ref_cello_d = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/D Note")
+ref_cello_e = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/E Note")
+ref_cello_f = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/F Note")
+ref_cello_g = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/G Note")
+ref_cello_a = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/A Note")
+ref_drum_c = NodePath("Drum/C Key")
+ref_drum_d = NodePath("Drum/D Key")
+ref_drum_e = NodePath("Drum/E Key")
+ref_drum_f = NodePath("Drum/F Key")
+ref_drum_g = NodePath("Drum/G Key")
+ref_drum_a = NodePath("Drum/A Key")
 
 [node name="Cello" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -252,7 +271,6 @@ texture = ExtResource( 14 )
 key = 5
 
 [node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -330,13 +348,6 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 201.41
 margin_bottom = 597.0
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/E Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/G Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/D Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/C Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/A Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Drum/F Key" method="_on_TabContainer_tab_changed"]
-[connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center/C Note" method="_on_TabContainer_tab_changed"]
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
 
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel"]
