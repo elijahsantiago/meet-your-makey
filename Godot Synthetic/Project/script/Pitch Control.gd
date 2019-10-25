@@ -4,7 +4,6 @@ export(NodePath) onready var pitch_shift_label_ref = get_node(pitch_shift_label_
 export(NodePath) onready var pitch_shift_slider_ref = get_node(pitch_shift_slider_ref)
 export(NodePath) onready var pitch_label_ref = get_node(pitch_label_ref)
 export(NodePath) onready var pitch_slider_ref = get_node(pitch_slider_ref)
-export(NodePath) onready var audio_manager_ref = get_node(audio_manager_ref)
 
 
 var pitch

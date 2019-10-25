@@ -1,38 +1,53 @@
-extends Node2D
+extends Node
 
-export(NodePath) onready var pitch_control_ref  = get_node(pitch_control_ref)
-export(NodePath) onready var volume_control_ref  = get_node(volume_control_ref)
+#Dictionary
+export(Dictionary) onready var drum_dictionary = {
+	"C": AudioStream,"D": AudioStream,"E": AudioStream,"F": AudioStream,"G": AudioStream,"A": AudioStream}
+export(Dictionary) onready var cello_dictionary = {
+	"C": AudioStream,"D": AudioStream,"E": AudioStream,"F": AudioStream,"G": AudioStream,"A": AudioStream}
+var key_input_dictionary = {}
 
-export(int, -60, 60, 1) var rotation_range
+#Audio Node Ref
+var ref_volume_control
+var ref_pitch_control
+var ref_circle
 
+#Key ref
+var ref_key_c
+var ref_key_d
+var ref_key_e
+var ref_key_f
+var ref_key_g
+var ref_key_a
+
+#Timer
+var time_start = 0
+var time_now = 0
+var elapsed
+var minutes
+var seconds
+var str_elapsed
+
+#Audio Variable
+var instrument
 var volume
 var pitch
 var pitch_shift
 
-export(NodePath) onready var timer_ref  = get_node(timer_ref)
-
-
-var time_start = 0
-var time_now = 0
-
 
 func _ready():
+	#Start Timer
 	time_start = OS.get_unix_time()
-	volume = volume_control_ref.volume
-	pitch = pitch_control_ref.pitch
-	pitch_shift = pitch_control_ref.pitch_shift
 
 func _process(delta):
 	time_now = OS.get_unix_time()
-	var elapsed = time_now - time_start
-	var minutes = elapsed / 60
-	var seconds = elapsed % 60
-	var str_elapsed = "%02d : %02d" % [minutes, seconds]
-	print("elapsed : ", str_elapsed)
-	self.rotation_degrees = (((pitch - 0) * (60 - (-60))) / (2 - 0)) + (-60)
-	
-func wait():
-	pass
+	_process_time()
+
+func _process_time():
+	elapsed = time_now - time_start
+	minutes = elapsed / 60
+	seconds = elapsed % 60
+	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
 func _play_audio(timestart, key, note):
 	var t = Timer.new()
@@ -47,20 +62,3 @@ func _play_audio(timestart, key, note):
 	player.stream = load(str("res://Music/", key, note ,".wav"))
 	player.play()
 	pass
-
-
-
-func _input(event):
-	if event is InputEventKey:
-		if event.is_pressed() == true and event.scancode == KEY_UP:
-			if pitch < 2:
-				rotation_range += 1;
-				pitch += pitch_shift
-			
-		if event.is_pressed() == true and event.scancode == KEY_DOWN:
-			if pitch > 0:
-				rotation_range -= 1;
-				pitch -= pitch_shift
-			
-		pitch_control_ref.pitch_slider_ref.value = pitch
-		pitch_control_ref.pitch_label_ref.text = str("Pitch: ", pitch)

@@ -6,23 +6,17 @@
 [ext_resource path="res://Images/Speaker-2.svg" type="Texture" id=4]
 [ext_resource path="res://Images/Speaker-3.svg" type="Texture" id=5]
 
-
 [node name="Volume Container" type="HBoxContainer"]
 margin_top = 75.0
 margin_right = 214.0
 margin_bottom = 110.0
 size_flags_horizontal = 3
 script = ExtResource( 1 )
-texture_ref = NodePath("CenterContainer/TextureRect")
-label_ref = NodePath("MarginContainer/VBoxContainer/Label")
-slider_ref = NodePath("MarginContainer/VBoxContainer/HSlider")
-texture_mode = {
-"volume0": ExtResource( 2 ),
-"volume1": ExtResource( 3 ),
-"volume2": ExtResource( 4 ),
-"volume3": ExtResource( 5 )
-}
-test = ExtResource( 2 )
+volume0 = ExtResource( 2 )
+volume1 = ExtResource( 3 )
+volume2 = ExtResource( 4 )
+volume3 = ExtResource( 5 )
+volume_value = 25.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 60.0
@@ -59,11 +53,12 @@ alignment = 1
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 120.0
 margin_bottom = 14.0
-text = "Volume:"
+text = "Volume: 25"
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 margin_top = 19.0
 margin_right = 120.0
 margin_bottom = 35.0
+value = 25.0
 ticks_on_borders = true
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
