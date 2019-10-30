@@ -1,6 +1,6 @@
 extends Node
 
-#Dictionary
+#Music Dictionary
 export(Dictionary) onready var drum_dictionary = {
 	"C": load("res://Music/Drum/C.wav"),
 	"D": load("res://Music/Drum/D.wav"),
@@ -15,20 +15,27 @@ export(Dictionary) onready var cello_dictionary = {
 	"F": load("res://Music/Cello/F.wav"),
 	"G": load("res://Music/Cello/G.wav"),
 	"A": load("res://Music/Cello/A.wav")}
-var key_input_dictionary = {}
+
+#Key Input and Reference
+var key_input_dictionary = {
+	"W"	: null, 
+	"A" : null, 
+	"S" : null, 
+	"D" : null, 
+	"F" : null, 
+	"G" : null}
+var ref_key = {
+	"C"	: null, 
+	"D" : null, 
+	"E" : null, 
+	"F" : null, 
+	"G" : null, 
+	"A" : null}
 
 #Audio Node Ref
 var ref_volume_control
 var ref_pitch_control
 var ref_circle
-
-#Key ref
-var ref_key_c
-var ref_key_d
-var ref_key_e
-var ref_key_f
-var ref_key_g
-var ref_key_a
 
 #Timer
 var time_start = 0
@@ -47,94 +54,70 @@ var pitch_shift
 
 func _ready():
 	#Start Timer
-	instrument = "Cello"
 	time_start = OS.get_unix_time()
 
 func _process(delta):
-	time_now = OS.get_unix_time()
-	#print(ref_key_c.name)
+	#Incrument Timer
 	_process_time()
 
 func _process_time():
+	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
 	minutes = elapsed / 60
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
+
 func _input(event):
+	#Play/Stop Keyref input
 	if event is InputEventKey:
-		match event.scancode:
-			KEY_W:
-				var key_ref = _get_key_ref("W")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_A:
-				var key_ref = _get_key_ref("A")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_S:
-				var key_ref = _get_key_ref("S")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_D:
-				var key_ref = _get_key_ref("D")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_F:
-				var key_ref = _get_key_ref("F")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_G:
-				var key_ref = _get_key_ref("G")
-				if event.is_pressed() == true and not event.echo:
-					key_ref._play_music()
-				elif event.is_pressed() == false and instrument != "Drum":
-					key_ref._stop_music()
-			KEY_UP:
-				if pitch < 2:
-					pitch += pitch_shift
-					ref_pitch_control.ref_pitch_slider.value = pitch
-					
-			KEY_DOWN:
-				if pitch > 0:
-					pitch -= pitch_shift
-					ref_pitch_control.ref_pitch_slider.value = pitch
+		var key_pressed = OS.get_scancode_string(event.scancode)
+		var key_ref = _get_key_ref(key_pressed)
+		if(key_ref != null):
+			if event.is_pressed() == true and not event.echo:
+				key_ref._play_music()
+			elif event.is_pressed() == false:
+				key_ref._stop_music()
 
 
 func _get_key_ref(value):
-	if key_input_dictionary[value] == "C":
-		return ref_key_c
-	elif key_input_dictionary[value] == "D":
-		return ref_key_d
-	elif key_input_dictionary[value] == "E":
-		return ref_key_e
-	elif key_input_dictionary[value] == "F":
-		return ref_key_f
-	elif key_input_dictionary[value] == "G":
-		return ref_key_g
-	elif key_input_dictionary[value] == "A":
-		return ref_key_a
+	#Return key ref depending on input dictionary
+	if(key_input_dictionary.has(value)):
+		match key_input_dictionary[value]:
+			"C":
+				return ref_key["C"]
+			"D":
+				return ref_key["D"]
+			"E":
+				return ref_key["E"]
+			"F":
+				return ref_key["F"]
+			"G":
+				return ref_key["G"]
+			"A":
+				return ref_key["A"]
+			_:
+				return null
 
-func _play_audio(timestart, key, note):
-	var t = Timer.new()
-	t.set_wait_time(timestart)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, "timeout")
+func play(note):
+	var audio_player
 	
-	var player = AudioStreamPlayer.new()
-	self.add_child(player)
-	player.stream = load(str("res://Music/", key, note ,".wav"))
-	player.play()
-	pass
+	match note:
+		"C":
+			audio_player = ref_key["C"]
+		"D":
+			audio_player = ref_key["D"]
+		"E":
+			audio_player = ref_key["E"]
+		"F":
+			audio_player = ref_key["F"]
+		"G":
+			audio_player = ref_key["G"]
+		"A":
+			audio_player = ref_key["A"]	
+	
+	audio_player._play_music()
+	
+	yield(get_tree().create_timer(1.0), "timeout")
+	
+	audio_player._stop_music()

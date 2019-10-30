@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://prefab/Input Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/Pitch Container.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefab/Volume Container.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Images/UI/Speaker-2.svg" type="Texture" id=4]
 [ext_resource path="res://script/TabManager.gd" type="Script" id=5]
-[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Images/Letter/G.png" type="Texture" id=7]
-[ext_resource path="res://Images/Letter/C.png" type="Texture" id=8]
-[ext_resource path="res://Images/Letter/D.png" type="Texture" id=9]
-[ext_resource path="res://Images/Letter/E.png" type="Texture" id=10]
-[ext_resource path="res://Images/Letter/F.png" type="Texture" id=11]
-[ext_resource path="res://Images/CircleObjectTest.png" type="Texture" id=12]
-[ext_resource path="res://script/CelloCenter.gd" type="Script" id=13]
-[ext_resource path="res://prefab/Key.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Images/Letter/A.png" type="Texture" id=15]
+[ext_resource path="res://Images/CircleObjectTest.png" type="Texture" id=6]
+[ext_resource path="res://script/CelloCenter.gd" type="Script" id=7]
+[ext_resource path="res://prefab/Key.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Images/Letter/C.png" type="Texture" id=9]
+[ext_resource path="res://Images/Letter/D.png" type="Texture" id=10]
+[ext_resource path="res://Images/Letter/E.png" type="Texture" id=11]
+[ext_resource path="res://Images/Letter/F.png" type="Texture" id=12]
+[ext_resource path="res://Images/Letter/G.png" type="Texture" id=13]
+[ext_resource path="res://Images/Letter/A.png" type="Texture" id=14]
+[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=15]
+[ext_resource path="res://new_script.gd" type="Script" id=16]
 
 [node name="Root Node" type="Node2D"]
 
@@ -188,114 +189,25 @@ margin_right = 573.0
 margin_bottom = 597.0
 tab_align = 0
 script = ExtResource( 5 )
-ref_cello_c = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/C Note")
-ref_cello_d = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/D Note")
-ref_cello_e = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/E Note")
-ref_cello_f = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/F Note")
-ref_cello_g = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/G Note")
-ref_cello_a = NodePath("Cello/CenterContainer/Panel/Circle Background/Center/A Note")
-ref_drum_c = NodePath("Drum/C Key")
-ref_drum_d = NodePath("Drum/D Key")
-ref_drum_e = NodePath("Drum/E Key")
-ref_drum_f = NodePath("Drum/F Key")
-ref_drum_g = NodePath("Drum/G Key")
-ref_drum_a = NodePath("Drum/A Key")
-
-[node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -279.0
-margin_top = -263.0
-margin_right = 279.0
-margin_bottom = 291.0
-
-[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -269.0
-margin_top = -252.0
-margin_right = -119.0
-margin_bottom = -102.0
-rect_pivot_offset = Vector2( 75, 75 )
-stretch_mode = 6
-
-[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 121.0
-margin_top = -252.0
-margin_right = 271.0
-margin_bottom = -102.0
-rect_min_size = Vector2( 0, 0 )
-rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 7 )
-key = 4
-
-[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -269.0
-margin_top = 98.0
-margin_right = -119.0
-margin_bottom = -29.0
-rect_min_size = Vector2( 0, 0 )
-rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 8 )
-key = 0
-
-[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -179.0
-margin_top = -77.0
-margin_right = -29.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 0, 0 )
-rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 9 )
-key = 1
-
-[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 21.0
-margin_top = -77.0
-margin_right = 171.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 0, 0 )
-rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 10 )
-key = 2
-
-[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 6 )]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = 121.0
-margin_top = 98.0
-margin_right = 271.0
-margin_bottom = -29.0
-rect_min_size = Vector2( 0, 0 )
-rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 11 )
-key = 3
+ref_cello_key = {
+"A": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/A Note"),
+"C": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/C Note"),
+"D": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/D Note"),
+"E": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/E Note"),
+"F": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/F Note"),
+"G": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/G Note")
+}
+ref_drum_key = {
+"A": NodePath("Drum/A Key"),
+"C": NodePath("Drum/C Key"),
+"D": NodePath("Drum/D Key"),
+"E": NodePath("Drum/E Key"),
+"F": NodePath("Drum/F Key"),
+"G": NodePath("Drum/G Key")
+}
 
 [node name="Cello" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
 editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -323,49 +235,140 @@ rect_min_size = Vector2( 550, 550 )
 [node name="Circle Background" type="Sprite" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel"]
 position = Vector2( 275, 275 )
 scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 12 )
+texture = ExtResource( 6 )
 
 [node name="Center" type="Node2D" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background"]
 scale = Vector2( 1.11111, 1.11111 )
-script = ExtResource( 13 )
+script = ExtResource( 7 )
 
-[node name="C Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="C Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( 110, -191 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 key = 0
 
-[node name="D Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="D Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( -110, -191 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
-[node name="E Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="E Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( -220, 0 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 key = 2
 
-[node name="F Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="F Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( -110, 191 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 key = 3
 
-[node name="G Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="G Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( 110, 191 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 7 )
+texture = ExtResource( 13 )
 key = 4
 
-[node name="A Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 14 )]
+[node name="A Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
 position = Vector2( 220, 0 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 key = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+[node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
 editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -269.0
+margin_top = 98.0
+margin_right = -119.0
+margin_bottom = -29.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 9 )
+key = 0
+
+[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -179.0
+margin_top = -77.0
+margin_right = -29.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 10 )
+key = 1
+
+[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 21.0
+margin_top = -77.0
+margin_right = 171.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 11 )
+key = 2
+
+[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 121.0
+margin_top = 98.0
+margin_right = 271.0
+margin_bottom = -29.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 12 )
+key = 3
+
+[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 121.0
+margin_top = -252.0
+margin_right = 271.0
+margin_bottom = -102.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 13 )
+key = 4
+
+[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -269.0
+margin_top = -252.0
+margin_right = -119.0
+margin_bottom = -102.0
+rect_pivot_offset = Vector2( 75, 75 )
+stretch_mode = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
 margin_left = 804.0
 margin_right = 1012.41
 margin_bottom = 604.0
@@ -376,6 +379,9 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 201.41
 margin_bottom = 597.0
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 16 )
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
 
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel"]
