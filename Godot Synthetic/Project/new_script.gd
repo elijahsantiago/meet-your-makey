@@ -10,12 +10,12 @@ var ode_to_joy = ["E","E","F","G","G","F","E","D","C","C","D","E","E","D","D",
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	
-	var i = 5
-	for note in ode_to_joy:
-		AudioManager.play("Cello", note, i, .9)
-		i+= .5
+	remove_child(self);
+#
+#	var i = 5
+#	for note in ode_to_joy:
+#		AudioManager.play("Cello", note, i, .9)
+#		i+= .5
 	
 func _back_beat():
 	

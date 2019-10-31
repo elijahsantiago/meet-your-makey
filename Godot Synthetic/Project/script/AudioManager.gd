@@ -135,3 +135,5 @@ func play(instrument, note, time_start, length):
 	yield(get_tree().create_timer(length), "timeout")
 	audio_player.stop()
 	
+	self.remove_child(audio_player)
+	
