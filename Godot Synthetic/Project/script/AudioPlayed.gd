@@ -17,7 +17,7 @@ func _set_text(instrument, note, start_time, length):
 	"#", id, "\n", 
 	"Instrument: ", instrument, "\n",
 	"Note: ", note, "\n",
-	"Start At: ", start_time, "\n",
+	"Start At: ", start_time, " sec\n",
 	"Length: ", length)
 	
 	get_child(0).text = (output)

@@ -49,6 +49,9 @@ var ref_circle
 var time_start = 0
 var time_now = 0
 var elapsed
+var time_start_mili = 0
+var time_now_mili = 0
+var elapsed_mili
 var minutes
 var seconds
 var str_elapsed
@@ -69,6 +72,11 @@ func _ready():
 	time_start = OS.get_unix_time()
 	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
+	
+	time_start_mili = OS.get_ticks_msec()
+	time_now_mili = OS.get_ticks_msec()
+	elapsed_mili = (time_now_mili - time_start_mili) * .001
+	
 	minutes = elapsed / 60
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
@@ -80,6 +88,10 @@ func _process(delta):
 func _process_time():
 	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
+	
+	time_now_mili = OS.get_ticks_msec()
+	elapsed_mili = (time_now_mili - time_start_mili) * .001
+	
 	minutes = elapsed / 60
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
@@ -88,6 +100,11 @@ func _reset_time():
 	time_start = OS.get_unix_time()
 	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
+	
+	time_start_mili = OS.get_ticks_msec()
+	time_now_mili = OS.get_ticks_msec()
+	elapsed_mili = (time_now_mili - time_start_mili) * .001
+	
 	minutes = elapsed / 60
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]

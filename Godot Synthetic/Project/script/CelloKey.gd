@@ -76,7 +76,7 @@ func _play_music():
 	player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
 	player.pitch_scale = AudioManager.pitch
 	player.play()
-	played_start_time = AudioManager.str_elapsed
+	played_start_time = AudioManager.elapsed_mili
 	played_start = OS.get_ticks_msec()
 
 func _stop_music():
