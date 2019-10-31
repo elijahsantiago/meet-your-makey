@@ -1,6 +1,6 @@
 extends TextureRect
 
-enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5}
+enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5, B = 6, C5 = 7}
 
 export(Key_Identifier) var key
 
@@ -59,6 +59,10 @@ func _play_music():
 			player.stream = AudioManager.drum_dictionary["G"]
 		5:
 			player.stream = AudioManager.drum_dictionary["A"]
+		6:
+			player.stream = AudioManager.drum_dictionary["B"]
+		7:
+			player.stream = AudioManager.drum_dictionary["C5"]
 	
 	player.volume_db = AudioManager.volume
 	player.pitch_scale = AudioManager.pitch
@@ -67,25 +71,3 @@ func _play_music():
 
 func _stop_music():
 	is_pressed = false
-	player.stop()
-	self.remove_child(player)
-
-
-
-
-#func _on_TabContainer_tab_changed(tab):
-#	print(str(tab, ":" , key))
-#	if(AudioManager.instrument == "Drum"):
-#		print(str(tab, ":" , key))
-#		if(key == 0):
-#			AudioManager.ref_key_c = self
-#		elif(key == 1):
-#			AudioManager.ref_key_d = self
-#		elif(key == 2):
-#			AudioManager.ref_key_e = self
-#		elif(key == 3):
-#			AudioManager.ref_key_f = self
-#		elif(key == 4):
-#			AudioManager.ref_key_g = self
-#		elif(key == 5):
-#			AudioManager.ref_key_a = self

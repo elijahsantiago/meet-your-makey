@@ -59,23 +59,38 @@ var volume
 var pitch
 var pitch_shift
 
+#Record Variable
+var is_recording
+var ref_scroll_item_container
+
 
 func _ready():
 	#Start Timer
 	time_start = OS.get_unix_time()
-
-func _process(delta):
-	#Incrument Timer
-	_process_time()
-
-func _process_time():
-	
 	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
 	minutes = elapsed / 60
 	seconds = elapsed % 60
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
+func _process(delta):
+	if(is_recording == true):
+		_process_time()
+
+func _process_time():
+	time_now = OS.get_unix_time()
+	elapsed = time_now - time_start
+	minutes = elapsed / 60
+	seconds = elapsed % 60
+	str_elapsed = "%02d : %02d" % [minutes, seconds]
+
+func _reset_time():
+	time_start = OS.get_unix_time()
+	time_now = OS.get_unix_time()
+	elapsed = time_now - time_start
+	minutes = elapsed / 60
+	seconds = elapsed % 60
+	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
 func _input(event):
 	#Play/Stop Keyref input
@@ -133,15 +148,24 @@ func play(instrument, note, time_start, length):
 			note_dictionary = drum_dictionary
 	
 	audio_player.stream = note_dictionary[note.to_upper()]
-	audio_player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
-	audio_player.pitch_scale = AudioManager.pitch
 	
 	yield(get_tree().create_timer(time_start - time_now), "timeout")
 	
 	audio_player.play()
 	
-	yield(get_tree().create_timer(length), "timeout")
+	var time_end = time_now + length
+	while(time_now < time_end):
+		if(volume != 0):
+			audio_player.volume_db = (((volume - 0) * (0 - (-20))) / (100 - 0)) + (-20)
+		elif(volume == 0):
+			audio_player.volume_db = -80
+		audio_player.pitch_scale = pitch
+		yield(get_tree(), "idle_frame")
+	
 	audio_player.stop()
 	
 	self.remove_child(audio_player)
+	
+func stop():
+	self.queue_free()
 	

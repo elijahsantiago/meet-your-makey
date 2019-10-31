@@ -15,13 +15,17 @@ _global_script_class_icons={
 
 [application]
 
-config/name="UI Tap"
+config/name="Synthetic Instrument"
 run/main_scene="res://scene/Main Scene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 AudioManager="*res://prefab/AudioManager.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [editor_plugins]
 

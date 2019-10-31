@@ -14,7 +14,6 @@ var magnitude_max = 220
 
 
 func _ready():
-	print(str(key , ":" , _get_angle_position()))
 	self.position = _get_angle_position()
 
 func _process(delta):
@@ -73,7 +72,7 @@ func _play_music():
 	player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
 	player.pitch_scale = AudioManager.pitch
 	player.play()
-
+	
 
 func _stop_music():
 	is_pressed = false
