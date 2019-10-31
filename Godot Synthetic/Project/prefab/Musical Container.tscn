@@ -1,13 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://script/Input Panel.gd" type="Script" id=1]
-[ext_resource path="res://script/Pitch Control.gd" type="Script" id=2]
+[ext_resource path="res://script/InputPanel.gd" type="Script" id=1]
+[ext_resource path="res://script/PitchControl.gd" type="Script" id=2]
 [ext_resource path="res://Images/UpArrow.png" type="Texture" id=3]
 [ext_resource path="res://prefab/Volume Container.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Images/UI/Speaker-0.svg" type="Texture" id=5]
 [ext_resource path="res://Images/UI/Speaker-1.svg" type="Texture" id=6]
 [ext_resource path="res://Images/UI/Speaker-2.svg" type="Texture" id=7]
 [ext_resource path="res://Images/UI/Speaker-3.svg" type="Texture" id=8]
+
+
 
 
 

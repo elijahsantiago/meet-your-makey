@@ -11,7 +11,6 @@ var player
 var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
-var key_value = Key_Identifier.keys()[key]
 
 
 func _ready():
@@ -52,7 +51,20 @@ func _play_music():
 	player = AudioStreamPlayer.new()
 	self.add_child(player)
 	
-	player.stream = AudioManager.cello_dictionary[key_value]
+	match key:
+		0:
+			player.stream = AudioManager.cello_dictionary["C"]
+		1:
+			player.stream = AudioManager.cello_dictionary["D"]
+		2:
+			player.stream = AudioManager.cello_dictionary["E"]
+		3:
+			player.stream = AudioManager.cello_dictionary["F"]
+		4:
+			player.stream = AudioManager.cello_dictionary["G"]
+		5:
+			player.stream = AudioManager.cello_dictionary["A"]
+			
 	player.volume_db = AudioManager.volume
 	player.pitch_scale = AudioManager.pitch
 	player.play()

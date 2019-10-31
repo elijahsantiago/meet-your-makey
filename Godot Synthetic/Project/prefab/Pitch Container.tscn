@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://script/Pitch Control.gd" type="Script" id=1]
+[ext_resource path="res://script/PitchControl.gd" type="Script" id=1]
 [ext_resource path="res://Images/UI/pitch.svg" type="Texture" id=2]
+
 
 [node name="Pitch Container" type="HBoxContainer"]
 margin_right = 214.0

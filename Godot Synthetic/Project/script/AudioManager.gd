@@ -99,7 +99,7 @@ func _get_key_ref(value):
 			_:
 				return null
 
-func play(note):
+func play(note, time_start, length):
 	var audio_player
 	
 	match note:
@@ -116,8 +116,10 @@ func play(note):
 		"A":
 			audio_player = ref_key["A"]	
 	
+	yield(get_tree().create_timer(time_start - time_now), "timeout")
+	
 	audio_player._play_music()
 	
-	yield(get_tree().create_timer(1.0), "timeout")
-	
+	yield(get_tree().create_timer(length), "timeout")
 	audio_player._stop_music()
+	

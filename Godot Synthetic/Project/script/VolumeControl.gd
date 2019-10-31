@@ -1,4 +1,3 @@
-tool
 extends HBoxContainer
 
 #Volume Texture
@@ -22,11 +21,12 @@ export(int, 0, 100, 1) var volume_value setget volume_value_set
 
 
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
-	volume_value = ref_slider.value
-	_set_texture(ref_slider.value)
-	ref_label.text = str("Volume: ", ref_slider.value)
 	AudioManager.ref_volume_control = self
+	volume_value = ref_slider.value
+	_set_texture(volume_value)
+	ref_label.text = str("Volume: ", volume_value)
 	AudioManager.volume = volume_value
 	
 func _on_HSlider_value_changed(value):
