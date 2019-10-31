@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/CelloB.wav-6b063ab98eebd29170c3da07dd05a0a6.sample"
+path="res://.import/C5.wav-3ea21a22fe7503f697bb57522cbff16e.sample"
 
 [deps]
 
-source_file="res://Music/CelloB.wav"
-dest_files=[ "res://.import/CelloB.wav-6b063ab98eebd29170c3da07dd05a0a6.sample" ]
+source_file="res://Music/Cello/C5.wav"
+dest_files=[ "res://.import/C5.wav-3ea21a22fe7503f697bb57522cbff16e.sample" ]
 
 [params]
 

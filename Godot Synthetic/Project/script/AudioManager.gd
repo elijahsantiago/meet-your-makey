@@ -7,14 +7,18 @@ export(Dictionary) onready var drum_dictionary = {
 	"E": load("res://Music/Drum/E.wav"),
 	"F": load("res://Music/Drum/F.wav"),
 	"G": load("res://Music/Drum/G.wav"),
-	"A": load("res://Music/Drum/A.wav")}
+	"A": load("res://Music/Drum/A.wav"),
+	"B": load("res://Music/Drum/B.wav"),
+	"C5": load("res://Music/Drum/C5.wav")}
 export(Dictionary) onready var cello_dictionary = {
 	"C": load("res://Music/Cello/C.wav"),
 	"D": load("res://Music/Cello/D.wav"),
 	"E": load("res://Music/Cello/E.wav"),
 	"F": load("res://Music/Cello/F.wav"),
 	"G": load("res://Music/Cello/G.wav"),
-	"A": load("res://Music/Cello/A.wav")}
+	"A": load("res://Music/Cello/A.wav"),
+	"B": load("res://Music/Cello/B.wav"),
+	"C5": load("res://Music/Cello/C5.wav")}
 
 #Key Input and Reference
 var key_input_dictionary = {
@@ -23,14 +27,18 @@ var key_input_dictionary = {
 	"S" : null, 
 	"D" : null, 
 	"F" : null, 
-	"G" : null}
+	"G" : null,
+	"Left": null,
+	"Right": null}
 var ref_key = {
 	"C"	: null, 
 	"D" : null, 
 	"E" : null, 
 	"F" : null, 
 	"G" : null, 
-	"A" : null}
+	"A" : null,
+	"B": null,
+	"C5": null}
 
 #Audio Node Ref
 var ref_volume_control
@@ -61,6 +69,7 @@ func _process(delta):
 	_process_time()
 
 func _process_time():
+	
 	time_now = OS.get_unix_time()
 	elapsed = time_now - time_start
 	minutes = elapsed / 60
@@ -72,6 +81,7 @@ func _input(event):
 	#Play/Stop Keyref input
 	if event is InputEventKey:
 		var key_pressed = OS.get_scancode_string(event.scancode)
+		print(key_pressed)
 		var key_ref = _get_key_ref(key_pressed)
 		if(key_ref != null):
 			if event.is_pressed() == true and not event.echo:
@@ -96,30 +106,22 @@ func _get_key_ref(value):
 				return ref_key["G"]
 			"A":
 				return ref_key["A"]
+			"B":
+				return ref_key["B"]
+			"C5":
+				return ref_key["C5"]
 			_:
 				return null
 
 func play(note, time_start, length):
 	var audio_player
 	
-	match note:
-		"C":
-			audio_player = ref_key["C"]
-		"D":
-			audio_player = ref_key["D"]
-		"E":
-			audio_player = ref_key["E"]
-		"F":
-			audio_player = ref_key["F"]
-		"G":
-			audio_player = ref_key["G"]
-		"A":
-			audio_player = ref_key["A"]	
+
 	
 	yield(get_tree().create_timer(time_start - time_now), "timeout")
 	
-	audio_player._play_music()
+	#audio_player._play_music()
 	
 	yield(get_tree().create_timer(length), "timeout")
-	audio_player._stop_music()
+	#audio_player._stop_music()
 	

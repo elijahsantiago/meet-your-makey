@@ -20,6 +20,8 @@ func _set_ref_key(instrument):
 		AudioManager.ref_key["F"] = get_node(ref_cello_key["F"])
 		AudioManager.ref_key["G"] = get_node(ref_cello_key["G"])
 		AudioManager.ref_key["A"] = get_node(ref_cello_key["A"])
+		AudioManager.ref_key["B"] = get_node(ref_cello_key["B"])
+		AudioManager.ref_key["C5"] = get_node(ref_cello_key["C5"])
 	elif AudioManager.instrument == "Drum":
 		AudioManager.ref_key["C"] = get_node(ref_drum_key["C"])
 		AudioManager.ref_key["D"] = get_node(ref_drum_key["D"])
@@ -27,3 +29,5 @@ func _set_ref_key(instrument):
 		AudioManager.ref_key["F"] = get_node(ref_drum_key["F"])
 		AudioManager.ref_key["G"] = get_node(ref_drum_key["G"])
 		AudioManager.ref_key["A"] = get_node(ref_drum_key["A"])
+		AudioManager.ref_key["B"] = get_node(ref_drum_key["B"])
+		AudioManager.ref_key["C5"] = get_node(ref_drum_key["C5"])

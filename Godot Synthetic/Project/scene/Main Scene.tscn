@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://prefab/Input Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/Pitch Container.tscn" type="PackedScene" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://Images/Letter/F.png" type="Texture" id=11]
 [ext_resource path="res://Images/Letter/G.png" type="Texture" id=12]
 [ext_resource path="res://Images/Letter/A.png" type="Texture" id=13]
-[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=14]
-[ext_resource path="res://new_script.gd" type="Script" id=15]
+[ext_resource path="res://Images/Letter/B.png" type="Texture" id=14]
+[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=15]
+[ext_resource path="res://new_script.gd" type="Script" id=16]
 
 [node name="Root Node" type="Node2D"]
 
@@ -32,6 +33,7 @@ margin_bottom = 604.0
 rect_min_size = Vector2( 230, 600 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Musical Container"]
+editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 223.0
@@ -40,21 +42,17 @@ size_flags_horizontal = 3
 custom_constants/separation = 5
 
 [node name="Input Panel" type="VBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer"]
+editor/display_folded = true
 margin_right = 216.0
-margin_bottom = 260.0
+margin_bottom = 348.0
 
 [node name="W Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
-
-[node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 
 [node name="A Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 44.0
 margin_bottom = 84.0
-input_key = "A"
-note_selected = 1
 
 [node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/A Input Panel/HBoxContainer/CenterContainer" index="0"]
 margin_left = 25.0
@@ -63,15 +61,12 @@ text = "A"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/A Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "D"
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 1
 
 [node name="S Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 88.0
 margin_bottom = 128.0
-input_key = "S"
-note_selected = 2
 
 [node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/S Input Panel/HBoxContainer/CenterContainer" index="0"]
 margin_left = 26.0
@@ -80,15 +75,12 @@ text = "S"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/S Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "E"
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 2
 
 [node name="D Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 132.0
 margin_bottom = 172.0
-input_key = "D"
-note_selected = 3
 
 [node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/D Input Panel/HBoxContainer/CenterContainer" index="0"]
 margin_left = 25.0
@@ -97,15 +89,12 @@ text = "D"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/D Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "F"
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 3
 
 [node name="F Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 176.0
 margin_bottom = 216.0
-input_key = "F"
-note_selected = 4
 
 [node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/F Input Panel/HBoxContainer/CenterContainer" index="0"]
 margin_left = 26.0
@@ -114,15 +103,12 @@ text = "F"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/F Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "G"
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 4
 
 [node name="G Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 220.0
 margin_bottom = 260.0
-input_key = "G"
-note_selected = 5
 
 [node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/G Input Panel/HBoxContainer/CenterContainer" index="0"]
 margin_left = 25.0
@@ -131,11 +117,38 @@ text = "G"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/G Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "A"
-items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null ]
 selected = 5
 
+[node name="Left Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
+editor/display_folded = true
+margin_top = 264.0
+margin_bottom = 304.0
+
+[node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Left Input Panel/HBoxContainer/CenterContainer" index="0"]
+margin_left = 18.0
+margin_right = 42.0
+text = "Left"
+
+[node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Left Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
+text = "B"
+selected = 6
+
+[node name="Right Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
+editor/display_folded = true
+margin_top = 308.0
+margin_bottom = 348.0
+
+[node name="Label" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Right Input Panel/HBoxContainer/CenterContainer" index="0"]
+margin_left = 14.0
+margin_right = 46.0
+text = "Right"
+
+[node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Right Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
+text = "C5"
+selected = 7
+
 [node name="Pitch Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
-margin_top = 265.0
+margin_top = 353.0
 margin_right = 216.0
 margin_bottom = 590.0
 size_flags_vertical = 3
@@ -172,7 +185,6 @@ value = 50.0
 focus_mode = 1
 
 [node name="Visual Container" type="PanelContainer" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 227.0
 margin_right = 807.0
 margin_bottom = 604.0
@@ -187,7 +199,9 @@ tab_align = 0
 script = ExtResource( 4 )
 ref_cello_key = {
 "A": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/A Note"),
+"B": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/B Note"),
 "C": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/C Note"),
+"C5": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/C5 Note"),
 "D": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/D Note"),
 "E": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/E Note"),
 "F": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/F Note"),
@@ -237,39 +251,51 @@ scale = Vector2( 1.11111, 1.11111 )
 script = ExtResource( 6 )
 
 [node name="C Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( 110, -191 )
+position = Vector2( 220, 0 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 8 )
 key = 0
 
 [node name="D Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( -110, -191 )
+position = Vector2( 155.563, -155.563 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 9 )
 
 [node name="E Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( -220, 0 )
+position = Vector2( 0, -220 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 key = 2
 
 [node name="F Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( -110, 191 )
+position = Vector2( -155.563, -155.563 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 11 )
 key = 3
 
 [node name="G Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( 110, 191 )
+position = Vector2( -220, 0 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 12 )
 key = 4
 
 [node name="A Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
-position = Vector2( 220, 0 )
+position = Vector2( -155.563, 155.563 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 13 )
 key = 5
+
+[node name="B Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
+position = Vector2( 0, 220 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 14 )
+key = 6
+
+[node name="C5 Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 7 )]
+position = Vector2( 155.563, 155.563 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+key = 7
 
 [node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
 editor/display_folded = true
@@ -281,7 +307,7 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -295,7 +321,7 @@ rect_pivot_offset = Vector2( 75, 75 )
 texture = ExtResource( 8 )
 key = 0
 
-[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -309,7 +335,7 @@ rect_pivot_offset = Vector2( 75, 75 )
 texture = ExtResource( 9 )
 key = 1
 
-[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -323,7 +349,7 @@ rect_pivot_offset = Vector2( 75, 75 )
 texture = ExtResource( 10 )
 key = 2
 
-[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -337,7 +363,7 @@ rect_pivot_offset = Vector2( 75, 75 )
 texture = ExtResource( 11 )
 key = 3
 
-[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -351,7 +377,7 @@ rect_pivot_offset = Vector2( 75, 75 )
 texture = ExtResource( 12 )
 key = 4
 
-[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 14 )]
+[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 15 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -377,7 +403,7 @@ margin_bottom = 597.0
 
 [node name="Node2D" type="Node2D" parent="."]
 visible = false
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
 
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel"]
@@ -391,6 +417,10 @@ script = ExtResource( 15 )
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/F Input Panel"]
 
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/G Input Panel"]
+
+[editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Left Input Panel"]
+
+[editable path="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Right Input Panel"]
 
 [editable path="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container"]
 

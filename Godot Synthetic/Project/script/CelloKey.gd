@@ -1,6 +1,6 @@
 extends Sprite
 
-enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5}
+enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5, B = 6, C5 = 7}
 
 export(Key_Identifier) var key
 export(float, 0, 1, .01) var magnitude_incrument = .01
@@ -14,6 +14,7 @@ var magnitude_max = 220
 
 
 func _ready():
+	print(str(key , ":" , _get_angle_position()))
 	self.position = _get_angle_position()
 
 func _process(delta):
@@ -42,7 +43,7 @@ func _process(delta):
 #Convert input into postion in circle
 func _get_angle_position():
 	var center = Vector2(0,0)
-	var radian = key * PI/3
+	var radian = key * PI/4
 	var magnitue_value = ((magnitude_max - magnitude_min) * magnitude_percent) + magnitude_min
 	return Vector2(center.x+cos(radian) * magnitue_value, center.y-sin(radian) * magnitue_value)
 
@@ -64,6 +65,10 @@ func _play_music():
 			player.stream = AudioManager.cello_dictionary["G"]
 		5:
 			player.stream = AudioManager.cello_dictionary["A"]
+		6:
+			player.stream = AudioManager.cello_dictionary["B"]
+		7:
+			player.stream = AudioManager.cello_dictionary["C5"]
 			
 	player.volume_db = AudioManager.volume
 	player.pitch_scale = AudioManager.pitch
