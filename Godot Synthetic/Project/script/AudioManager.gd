@@ -113,15 +113,25 @@ func _get_key_ref(value):
 			_:
 				return null
 
-func play(note, time_start, length):
-	var audio_player
+func play(instrument, note, time_start, length):
+	var audio_player = AudioStreamPlayer.new()
+	var note_dictionary = {}
+	self.add_child(audio_player)
 	
-
+	match instrument:
+		"Cello":
+			note_dictionary = cello_dictionary
+		"Drum":
+			note_dictionary = drum_dictionary
+	
+	audio_player.stream = note_dictionary[note.to_upper()]
+	audio_player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
+	audio_player.pitch_scale = AudioManager.pitch
 	
 	yield(get_tree().create_timer(time_start - time_now), "timeout")
 	
-	#audio_player._play_music()
+	audio_player.play()
 	
 	yield(get_tree().create_timer(length), "timeout")
-	#audio_player._stop_music()
+	audio_player.stop()
 	

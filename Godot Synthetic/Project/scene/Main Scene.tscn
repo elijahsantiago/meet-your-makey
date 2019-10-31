@@ -49,6 +49,9 @@ margin_bottom = 348.0
 [node name="W Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 
+[node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/W Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
+
 [node name="A Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
 editor/display_folded = true
 margin_top = 44.0
@@ -61,6 +64,7 @@ text = "A"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/A Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "D"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 1
 
 [node name="S Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -75,6 +79,7 @@ text = "S"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/S Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "E"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 2
 
 [node name="D Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -89,6 +94,7 @@ text = "D"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/D Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "F"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 3
 
 [node name="F Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -103,6 +109,7 @@ text = "F"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/F Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "G"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 4
 
 [node name="G Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -117,6 +124,7 @@ text = "G"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/G Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "A"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 5
 
 [node name="Left Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -131,6 +139,7 @@ text = "Left"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Left Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "B"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 6
 
 [node name="Right Input Panel" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel" instance=ExtResource( 1 )]
@@ -145,6 +154,7 @@ text = "Right"
 
 [node name="Note" parent="HBoxContainer/Musical Container/VBoxContainer/Input Panel/Right Input Panel/HBoxContainer/MarginContainer/VBoxContainer" index="0"]
 text = "C5"
+items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, false, -1, null, "F", null, false, -1, null, "G", null, false, -1, null, "A", null, false, -1, null, "B", null, false, -1, null, "C5", null, false, -1, null ]
 selected = 7
 
 [node name="Pitch Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
@@ -242,6 +252,7 @@ margin_bottom = 555.0
 rect_min_size = Vector2( 550, 550 )
 
 [node name="Circle Background" type="Sprite" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel"]
+editor/display_folded = true
 position = Vector2( 275, 275 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 5 )

@@ -70,7 +70,7 @@ func _play_music():
 		7:
 			player.stream = AudioManager.cello_dictionary["C5"]
 			
-	player.volume_db = AudioManager.volume
+	player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
 	player.pitch_scale = AudioManager.pitch
 	player.play()
 
