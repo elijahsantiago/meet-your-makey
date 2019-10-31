@@ -5,13 +5,17 @@ enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5, B = 6, C5 = 7}
 export(Key_Identifier) var key
 export(float, 0, 1, .01) var magnitude_incrument = .01
 export(float, 0, 1, .01) var magnitude_percent = 1
-
+var key_value = Key_Identifier.keys()[key]
 
 var player
 var is_pressed = false
 var magnitude_min = 40
 var magnitude_max = 220
 
+#Record Variable
+var played_start_time
+var played_start
+var played_ended
 
 func _ready():
 	self.position = _get_angle_position()
@@ -72,9 +76,13 @@ func _play_music():
 	player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
 	player.pitch_scale = AudioManager.pitch
 	player.play()
-	
+	played_start_time = AudioManager.str_elapsed
+	played_start = OS.get_ticks_msec()
 
 func _stop_music():
+	if AudioManager.is_recording == true:
+		played_ended  = OS.get_ticks_msec()
+		AudioManager.ref_scroll_item_container._spawn("Cello", key_value, played_start_time, (played_ended - played_start) * .001)
 	is_pressed = false
 	player.stop()
 	self.remove_child(player)

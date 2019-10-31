@@ -96,7 +96,6 @@ func _input(event):
 	#Play/Stop Keyref input
 	if event is InputEventKey:
 		var key_pressed = OS.get_scancode_string(event.scancode)
-		print(key_pressed)
 		var key_ref = _get_key_ref(key_pressed)
 		if(key_ref != null):
 			if event.is_pressed() == true and not event.echo:

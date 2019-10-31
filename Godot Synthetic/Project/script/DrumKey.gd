@@ -3,6 +3,7 @@ extends TextureRect
 enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5, B = 6, C5 = 7}
 
 export(Key_Identifier) var key
+var key_value = Key_Identifier.keys()[key]
 
 var player
 var is_pressed = false
@@ -27,13 +28,6 @@ func _process(delta):
 			player.volume_db = -80
 		else:
 			player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40)
-	
-	#Move key if pressed, reset if release
-	if(is_pressed):
-		pass
-	elif(!is_pressed):
-		pass
-		
 
 func _play_music():
 	is_pressed = true
@@ -46,28 +40,14 @@ func _play_music():
 	self.rect_scale.x = 1
 	self.rect_scale.y = 1
 	
-	match key:
-		0:
-			player.stream = AudioManager.drum_dictionary["C"]
-		1:
-			player.stream = AudioManager.drum_dictionary["D"]
-		2:
-			player.stream = AudioManager.drum_dictionary["E"]
-		3:
-			player.stream = AudioManager.drum_dictionary["F"]
-		4:
-			player.stream = AudioManager.drum_dictionary["G"]
-		5:
-			player.stream = AudioManager.drum_dictionary["A"]
-		6:
-			player.stream = AudioManager.drum_dictionary["B"]
-		7:
-			player.stream = AudioManager.drum_dictionary["C5"]
-	
+	player.stream = AudioManager.drum_dictionary[key_value]	
 	player.volume_db = AudioManager.volume
 	player.pitch_scale = AudioManager.pitch
 	player.play()
+	
+	if AudioManager.is_recording == true:
+		AudioManager.ref_scroll_item_container._spawn("Drum", key_value, AudioManager.str_elapsed, .1)
 
 
 func _stop_music():
-	is_pressed = false
+	pass
