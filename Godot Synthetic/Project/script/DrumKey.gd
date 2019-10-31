@@ -3,7 +3,7 @@ extends TextureRect
 enum Key_Identifier { C = 0, D = 1, E = 2, F = 3, G = 4, A = 5, B = 6, C5 = 7}
 
 export(Key_Identifier) var key
-var key_value = Key_Identifier.keys()[key]
+var key_value
 
 var player
 var is_pressed = false
@@ -39,6 +39,8 @@ func _play_music():
 	timer_t.start(.5)
 	self.rect_scale.x = 1
 	self.rect_scale.y = 1
+	
+	key_value = Key_Identifier.keys()[key]
 	
 	player.stream = AudioManager.drum_dictionary[key_value]	
 	player.volume_db = AudioManager.volume

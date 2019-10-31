@@ -65,7 +65,7 @@ var pitch_shift
 #Record Variable
 var is_recording
 var ref_scroll_item_container
-
+var is_playing
 
 func _ready():
 	#Start Timer
@@ -82,7 +82,7 @@ func _ready():
 	str_elapsed = "%02d : %02d" % [minutes, seconds]
 
 func _process(delta):
-	if(is_recording == true):
+	if(is_recording == true or is_playing == true):
 		_process_time()
 
 func _process_time():
@@ -165,8 +165,9 @@ func play(instrument, note, time_start, length):
 	
 	audio_player.stream = note_dictionary[note.to_upper()]
 	
-	yield(get_tree().create_timer(time_start - time_now), "timeout")
+	print(elapsed)
 	
+	yield(get_tree().create_timer(time_start - elapsed), "timeout")
 	audio_player.play()
 	
 	var time_end = time_now + length

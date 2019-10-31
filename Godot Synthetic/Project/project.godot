@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 AudioManager="*res://prefab/AudioManager.tscn"
+Music="*res://prefab/Music.tscn"
 
 [display]
 

@@ -4,21 +4,21 @@
 [ext_resource path="res://prefab/Pitch Container.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefab/Volume Container.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Images/UI/Speaker-2.svg" type="Texture" id=4]
-[ext_resource path="res://script/TabManager.gd" type="Script" id=5]
-[ext_resource path="res://Images/CircleObjectTest.png" type="Texture" id=6]
-[ext_resource path="res://script/CelloCenter.gd" type="Script" id=7]
-[ext_resource path="res://prefab/Key.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Images/Letter/C.png" type="Texture" id=9]
-[ext_resource path="res://Images/Letter/D.png" type="Texture" id=10]
-[ext_resource path="res://Images/Letter/E.png" type="Texture" id=11]
-[ext_resource path="res://Images/Letter/F.png" type="Texture" id=12]
-[ext_resource path="res://Images/Letter/G.png" type="Texture" id=13]
-[ext_resource path="res://Images/Letter/A.png" type="Texture" id=14]
-[ext_resource path="res://Images/Letter/B.png" type="Texture" id=15]
-[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=16]
-[ext_resource path="res://script/RecordContainer.gd" type="Script" id=17]
-[ext_resource path="res://script/ScrollItemContainer.gd" type="Script" id=18]
-[ext_resource path="res://new_script.gd" type="Script" id=19]
+[ext_resource path="res://script/PlayControl.gd" type="Script" id=5]
+[ext_resource path="res://script/TabManager.gd" type="Script" id=6]
+[ext_resource path="res://Images/CircleObjectTest.png" type="Texture" id=7]
+[ext_resource path="res://script/CelloCenter.gd" type="Script" id=8]
+[ext_resource path="res://prefab/Key.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Images/Letter/C.png" type="Texture" id=10]
+[ext_resource path="res://Images/Letter/D.png" type="Texture" id=11]
+[ext_resource path="res://Images/Letter/E.png" type="Texture" id=12]
+[ext_resource path="res://Images/Letter/F.png" type="Texture" id=13]
+[ext_resource path="res://Images/Letter/G.png" type="Texture" id=14]
+[ext_resource path="res://Images/Letter/A.png" type="Texture" id=15]
+[ext_resource path="res://Images/Letter/B.png" type="Texture" id=16]
+[ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=17]
+[ext_resource path="res://script/RecordContainer.gd" type="Script" id=18]
+[ext_resource path="res://script/ScrollItemContainer.gd" type="Script" id=19]
 
 [node name="Root Node" type="Node2D"]
 
@@ -30,7 +30,6 @@ margin_bottom = 600.0
 custom_constants/separation = -3
 
 [node name="Musical Container" type="PanelContainer" parent="HBoxContainer"]
-editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 230, 600 )
@@ -159,9 +158,10 @@ items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, fal
 selected = 7
 
 [node name="Pitch Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
+editor/display_folded = true
 margin_top = 353.0
 margin_right = 216.0
-margin_bottom = 586.0
+margin_bottom = 546.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel"]
@@ -198,8 +198,39 @@ focus_mode = 0
 value = 50.0
 focus_mode = 0
 
+[node name="Play Panel" type="MarginContainer" parent="HBoxContainer/Musical Container/VBoxContainer"]
+margin_top = 551.0
+margin_right = 216.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 5
+script = ExtResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Musical Container/VBoxContainer/Play Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 206.0
+margin_bottom = 30.0
+
+[node name="Play" type="Button" parent="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer"]
+margin_right = 96.0
+margin_bottom = 20.0
+focus_mode = 0
+size_flags_horizontal = 3
+enabled_focus_mode = 0
+text = "Play"
+
+[node name="Reset" type="Button" parent="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer"]
+margin_left = 100.0
+margin_right = 196.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Reset"
+
 [node name="Visual Container" type="PanelContainer" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 227.0
 margin_right = 807.0
 margin_bottom = 600.0
@@ -211,7 +242,7 @@ margin_top = 7.0
 margin_right = 573.0
 margin_bottom = 593.0
 tab_align = 0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 ref_cello_key = {
 "A": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/A Note"),
 "B": NodePath("Cello/CenterContainer/Panel/Circle Background/Center/B Note"),
@@ -264,61 +295,60 @@ rect_min_size = Vector2( 550, 550 )
 editor/display_folded = true
 position = Vector2( 275, 275 )
 scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Center" type="Node2D" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background"]
 scale = Vector2( 1.11111, 1.11111 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
-[node name="C Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="C Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( 220, 0 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 key = 0
 
-[node name="D Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="D Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( 155.563, -155.563 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
-[node name="E Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="E Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( 0, -220 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 key = 2
 
-[node name="F Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="F Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( -155.563, -155.563 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 key = 3
 
-[node name="G Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="G Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( -220, 0 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 key = 4
 
-[node name="A Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="A Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( -155.563, 155.563 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 key = 5
 
-[node name="B Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="B Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( 0, 220 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 key = 6
 
-[node name="C5 Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 8 )]
+[node name="C5 Note" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" instance=ExtResource( 9 )]
 position = Vector2( 155.563, 155.563 )
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 key = 7
 
 [node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -328,7 +358,7 @@ margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 279, 277 )
 
-[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -340,7 +370,7 @@ margin_bottom = -383.0
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
 
-[node name="B Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="B Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -351,10 +381,10 @@ margin_right = 284.0
 margin_bottom = -383.0
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 key = 6
 
-[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -365,10 +395,10 @@ margin_right = -139.0
 margin_bottom = 188.513
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 key = 1
 
-[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -379,10 +409,10 @@ margin_right = -14.0
 margin_bottom = 88.5126
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 key = 2
 
-[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -393,10 +423,10 @@ margin_right = 156.0
 margin_bottom = 88.5126
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 key = 3
 
-[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -407,10 +437,10 @@ margin_right = 281.0
 margin_bottom = -88.4874
 rect_min_size = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 key = 4
 
-[node name="C5 Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="C5 Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -421,11 +451,11 @@ margin_right = 71.0
 margin_bottom = 248.0
 rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 6
 key = 7
 
-[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 16 )]
+[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Drum" instance=ExtResource( 17 )]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -436,35 +466,31 @@ margin_right = 71.0
 margin_bottom = 248.0
 rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 75, 75 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 6
 key = 0
 
 [node name="Record Container" type="PanelContainer" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 804.0
 margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 220, 0 )
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 ref_time_label = NodePath("Panel/VBoxContainer/Time Panel/Label")
 ref_rec_button = NodePath("Panel/VBoxContainer/Record Panel/HBoxContainer/Record")
 ref_scroll_item = NodePath("Panel/VBoxContainer/Scroll Container/Scroll Item Container")
 
 [node name="Panel" type="Panel" parent="HBoxContainer/Record Container"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 213.0
 margin_bottom = 593.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Record Container/Panel"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Record Panel" type="MarginContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer"]
-editor/display_folded = true
 margin_right = 206.0
 margin_bottom = 35.0
 custom_constants/margin_right = 10
@@ -495,7 +521,6 @@ size_flags_horizontal = 3
 text = "Clear"
 
 [node name="Time Panel" type="MarginContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer"]
-editor/display_folded = true
 margin_top = 39.0
 margin_right = 206.0
 margin_bottom = 63.0
@@ -524,10 +549,9 @@ scroll_horizontal_enabled = false
 
 [node name="Scroll Item Container" type="VBoxContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer/Scroll Container"]
 custom_constants/separation = 0
-script = ExtResource( 18 )
-
-[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource( 19 )
+[connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Play" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Reset" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Reset_pressed"]
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
 [connection signal="toggled" from="HBoxContainer/Record Container/Panel/VBoxContainer/Record Panel/HBoxContainer/Record" to="HBoxContainer/Record Container" method="_on_Record_toggled"]
 [connection signal="pressed" from="HBoxContainer/Record Container/Panel/VBoxContainer/Record Panel/HBoxContainer/Clear" to="HBoxContainer/Record Container" method="_on_Clear_pressed"]
