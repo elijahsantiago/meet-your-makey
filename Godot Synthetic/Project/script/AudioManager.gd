@@ -183,5 +183,6 @@ func play(instrument, note, time_start, length):
 	
 func stop():
 	for child in self.get_children():
+		
 		child.queue_free()
 	

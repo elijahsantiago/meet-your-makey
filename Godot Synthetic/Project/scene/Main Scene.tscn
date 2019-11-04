@@ -23,6 +23,7 @@
 [node name="Root Node" type="Node2D"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1024.0
@@ -550,6 +551,8 @@ scroll_horizontal_enabled = false
 [node name="Scroll Item Container" type="VBoxContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer/Scroll Container"]
 custom_constants/separation = 0
 script = ExtResource( 19 )
+
+[node name="Node2D" type="Node2D" parent="."]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Play" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Reset" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Reset_pressed"]
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
