@@ -165,8 +165,6 @@ func play(instrument, note, time_start, length):
 	
 	audio_player.stream = note_dictionary[note.to_upper()]
 	
-	print(elapsed)
-	
 	yield(get_tree().create_timer(time_start - elapsed), "timeout")
 	audio_player.play()
 	
@@ -184,5 +182,6 @@ func play(instrument, note, time_start, length):
 	self.remove_child(audio_player)
 	
 func stop():
-	self.queue_free()
+	for child in self.get_children():
+		child.queue_free()
 	
