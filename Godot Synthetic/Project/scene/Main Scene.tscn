@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://prefab/Input Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/Pitch Container.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Images/Letter/A.png" type="Texture" id=17]
 [ext_resource path="res://script/RecordContainer.gd" type="Script" id=18]
 [ext_resource path="res://script/ScrollItemContainer.gd" type="Script" id=19]
-[ext_resource path="res://prefab/AudioPlayer.tscn" type="PackedScene" id=20]
 
 [node name="Root Node" type="Node2D"]
 
@@ -268,6 +267,7 @@ ref_drum_key = {
 }
 
 [node name="Drum" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -554,8 +554,6 @@ scroll_horizontal_enabled = false
 [node name="Scroll Item Container" type="VBoxContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer/Scroll Container"]
 custom_constants/separation = 0
 script = ExtResource( 19 )
-
-[node name="AudioPlayer" parent="." instance=ExtResource( 20 )]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Play" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/HBoxContainer/Reset" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Reset_pressed"]
 [connection signal="tab_changed" from="HBoxContainer/Visual Container/TabContainer" to="HBoxContainer/Visual Container/TabContainer" method="_on_TabContainer_tab_changed"]
