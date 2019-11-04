@@ -19,5 +19,6 @@ func _set_text(instrument, note, start_time, length):
 	"Note: ", note, "\n",
 	"Start At: ", start_time, " sec\n",
 	"Length: ", length)
+	#, "\n", "AudioManager.play(\"", instrument, "\"" , ", \"" , note , "\", " , start_time, ", ", length
 	
 	get_child(0).text = (output)

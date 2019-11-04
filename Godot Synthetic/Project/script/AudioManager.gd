@@ -67,6 +67,9 @@ var is_recording
 var ref_scroll_item_container
 var is_playing
 
+#Instance
+var scene = load("res://prefab/AudioPlayer.tscn")
+
 func _ready():
 	#Start Timer
 	time_start = OS.get_unix_time()
@@ -152,37 +155,18 @@ func _get_key_ref(value):
 			_:
 				return null
 
-func play(instrument, note, time_start, length):
-	var audio_player = AudioStreamPlayer.new()
-	var note_dictionary = {}
-	self.add_child(audio_player)
+func play(instruments, notes, time_starts, lengths):
 	
-	match instrument:
-		"Cello":
-			note_dictionary = cello_dictionary
-		"Drum":
-			note_dictionary = drum_dictionary
+	var node = scene.instance()
+	node.instrument = instruments
+	node.note = notes
+	node.time_start = time_starts
+	node.length = lengths
+	add_child(node)
+	node.play()	
 	
-	audio_player.stream = note_dictionary[note.to_upper()]
-	
-	yield(get_tree().create_timer(time_start - elapsed), "timeout")
-	audio_player.play()
-	
-	var time_end = time_now + length
-	while(time_now < time_end):
-		if(volume != 0):
-			audio_player.volume_db = (((volume - 0) * (0 - (-20))) / (100 - 0)) + (-20)
-		elif(volume == 0):
-			audio_player.volume_db = -80
-		audio_player.pitch_scale = pitch
-		yield(get_tree(), "idle_frame")
-	
-	audio_player.stop()
-	
-	self.remove_child(audio_player)
-	
+
 func stop():
 	for child in self.get_children():
-		
-		child.queue_free()
+		child.stop()
 	

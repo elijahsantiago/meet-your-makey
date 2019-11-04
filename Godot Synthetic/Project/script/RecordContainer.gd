@@ -14,6 +14,8 @@ func _process(delta):
 func _on_Record_toggled(button_pressed):
 	if button_pressed == true:
 		AudioManager._reset_time()
+		AudioManager.is_playing = false
+		AudioManager.stop()
 	AudioManager.is_recording = button_pressed
 	
 
@@ -21,7 +23,7 @@ func _on_Clear_pressed():
 	ref_rec_button.pressed = false
 	AudioManager.is_recording = false
 	AudioManager._reset_time()
+	AudioManager.is_playing = false
+	AudioManager.stop()
 	for item in ref_scroll_item.get_children():
 		item.free()
-	
-	
