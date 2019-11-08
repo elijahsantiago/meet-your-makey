@@ -29,10 +29,10 @@ func play():
 	
 	yield(get_tree().create_timer(time_start - AudioManager.elapsed), "timeout")
 	audio_player.play()
+	is_playing = true
 	yield(get_tree().create_timer(length), "timeout")
 	stop()
-	
-	
+	is_playing = false
 	
 	pass
 
@@ -40,7 +40,7 @@ func play():
 func _process(delta):
 	if(is_playing == true): 
 		if(volume != 0):
-			audio_player.volume_db = (((AudioManager.volume - 0) * (0 - (-20))) / (100 - 0)) + (-20)
+			audio_player.volume_db = (((AudioManager.volume - 0) * (5 - (-20))) / (100 - 0)) + (-20)
 		elif(volume == 0):
 			audio_player.volume_db = -80
 		audio_player.pitch_scale = AudioManager.pitch

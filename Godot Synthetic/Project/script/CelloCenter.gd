@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func _process(delta):
-	self.rotation_degrees = (((AudioManager.pitch - 0) * (60 - (-60))) / (2-0)) + (-60)
+func _on_pitch_slider_value_changed(value):
+	self.rotation_degrees = (((value - 0) * (45 - (-45))) / (2-0)) + (-45)

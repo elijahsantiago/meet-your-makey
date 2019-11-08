@@ -26,7 +26,7 @@ func _process(delta):
 		if(AudioManager.volume == 0):
 			player.volume_db = -80
 		else:
-			player.volume_db = ((24 - (-60)) * (AudioManager.volume/100)) + (-40) 
+			player.volume_db = (((AudioManager.volume - 0) * (5 - (-20))) / (100 - 0)) + (-20)
 	
 	#Update object position if button is pressed
 	if(is_pressed):
