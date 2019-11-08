@@ -26,7 +26,7 @@ Music="*res://prefab/Music.tscn"
 
 [display]
 
-window/size/width=1120
+window/size/width=1114
 window/stretch/mode="viewport"
 
 [editor_plugins]
