@@ -21,12 +21,13 @@ func _ready():
 	self.position = _get_angle_position()
 
 func _process(delta):
-	if player != null and player.playing == true:
-		player.pitch_scale = float(AudioManager.pitch)
-		if(AudioManager.volume == 0):
-			player.volume_db = -80
-		else:
-			player.volume_db = (((AudioManager.volume - 0) * (5 - (-20))) / (100 - 0)) + (-20)
+	if player != null:
+		if player.playing == true:
+			player.pitch_scale = float(AudioManager.pitch)
+			if(AudioManager.volume == 0):
+				player.volume_db = -80
+			else:
+				player.volume_db = (((AudioManager.volume - 0) * (5 - (-20))) / (100 - 0)) + (-20)
 	
 	#Update object position if button is pressed
 	if(is_pressed):
@@ -85,4 +86,6 @@ func _stop_music():
 		AudioManager.ref_scroll_item_container._spawn("Cello", key_value, played_start_time, (played_ended - played_start) * .001)
 	is_pressed = false
 	player.stop()
-	self.remove_child(player)
+	player = null
+	for i in range(0, get_child_count()):
+    	get_child(i).queue_free()
