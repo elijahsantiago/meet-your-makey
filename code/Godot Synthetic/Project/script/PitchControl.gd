@@ -29,14 +29,15 @@ func _ready():
 
 
 func _on_pitch_shift_slider_value_changed(value):
-	AudioManager.pitch_shift = pitch_shift_value
 	pitch_shift_value = value
-	ref_pitch_shift_label.text = str("Pitch Shift: ", value)
+	AudioManager.pitch_shift = pitch_shift_value	
+	ref_pitch_shift_label.text = str("Pitch Shift: ", pitch_shift_value)
 
 func _on_pitch_slider_value_changed(value):
-	AudioManager.pitch = pitch_value
 	pitch_value = value
-	ref_pitch_label.text = str("Pitch: ", value)
+	AudioManager.pitch = pitch_value
+	ref_pitch_label.text = str("Pitch: ", pitch_value)
+	print(AudioManager.pitch)
 
 
 

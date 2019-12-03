@@ -125,7 +125,7 @@ func _input(event):
 		if event.scancode == KEY_UP and event.is_pressed() == true:
 			if pitch < 2:
 				pitch += pitch_shift
-				ref_pitch_control.ref_pitch_slider.value = pitch	
+				ref_pitch_control.ref_pitch_slider.value = pitch
 		if event.scancode == KEY_DOWN and event.is_pressed() == true:
 			if pitch > 0:
 				pitch -= pitch_shift
