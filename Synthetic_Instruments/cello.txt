@@ -1,8 +1,0 @@
-CelloC.wav
-CelloD.wav
-CelloE.wav
-CelloF.wav
-CelloG.wav
-CelloA.wav
-CelloB.wav
-CelloC5.wav

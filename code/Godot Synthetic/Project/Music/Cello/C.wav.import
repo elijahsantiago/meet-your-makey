@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C.wav-2e6b5af67c0b647da52aa60dfb457581.sample"
+
+[deps]
+
+source_file="res://Music/Cello/C.wav"
+dest_files=[ "res://.import/C.wav-2e6b5af67c0b647da52aa60dfb457581.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

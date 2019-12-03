@@ -1,0 +1,96 @@
+
+
+
+void setup(){
+  size(581,581);
+  smooth();
+  
+  
+  //Draw Circle
+  PVector center = new PVector(290, 290);
+  float circle_diameter = 580;
+  float circle_radius = circle_diameter/2;
+  circle(center.x, center.y, circle_diameter);
+  
+  //Draw Horizontal Line
+  PVector endPointLine1 = new PVector(1,1);
+  
+  
+  endPointLine1.setMag(circle_radius);
+  
+  
+  
+  PVector endLine1 = endlineAngle(290, 290,(1 * PI/4), 240);
+  PVector endLine2 = endlineAngle(290, 290,(2 * PI/4), 240);
+  PVector endLine3 = endlineAngle(290, 290,(3 * PI/4), 240);
+  PVector endLine4 = endlineAngle(290, 290,(4 * PI/4), 240);
+  PVector endLine5 = endlineAngle(290, 290,(5 * PI/4), 240);
+  PVector endLine6 = endlineAngle(290, 290,(6 * PI/4), 240);
+  PVector endLine7 = endlineAngle(290, 290,(7 * PI/4), 240);
+  PVector endLine8 = endlineAngle(290, 290,(8 * PI/4), 240);
+  
+  PVector begLine1 = endlineAngle(endLine1.x, endLine1.y,(1 * PI/4), -200);
+  PVector begLine2 = endlineAngle(endLine2.x, endLine2.y,(2 * PI/4), -200);
+  PVector begLine3 = endlineAngle(endLine3.x, endLine3.y,(3 * PI/4), -200);
+  PVector begLine4 = endlineAngle(endLine4.x, endLine4.y,(4 * PI/4), -200);
+  PVector begLine5 = endlineAngle(endLine5.x, endLine5.y,(5 * PI/4), -200);
+  PVector begLine6 = endlineAngle(endLine6.x, endLine6.y,(6 * PI/4), -200);
+  PVector begLine7 = endlineAngle(endLine7.x, endLine7.y,(7 * PI/4), -200);
+  PVector begLine8 = endlineAngle(endLine8.x, endLine8.y,(8 * PI/4), -200);
+  
+  line(begLine1.x, begLine1.y, endLine1.x, endLine1.y);
+  line(begLine2.x, begLine2.y, endLine2.x, endLine2.y);
+  line(begLine3.x, begLine3.y, endLine3.x, endLine3.y);
+  line(begLine4.x, begLine4.y, endLine4.x, endLine4.y);
+  line(begLine5.x, begLine5.y, endLine5.x, endLine5.y);
+  line(begLine6.x, begLine6.y, endLine6.x, endLine6.y);
+  line(begLine7.x, begLine7.y, endLine7.x, endLine7.y);
+  line(begLine8.x, begLine8.y, endLine8.x, endLine8.y);
+  
+  
+  float incrumentPitch = 4.5;
+  float currentAngle = 0;
+  
+  print(incrumentPitch);
+  
+  for(int x = 0; x < 8; x++){
+    
+    for(int y = 0; y < 10; y++){
+      currentAngle += incrumentPitch;
+      
+      print(currentAngle + " ");
+      float radian = currentAngle * (PI /180);
+      float length = 10;
+      PVector endLineCircle = endlineAngle(290, 290, radian, circle_radius);
+      PVector endLineTowardCenter = endlineAngle((int)endLineCircle.x, (int)endLineCircle.y, invertAngle(radian), length);
+      line(endLineCircle.x, endLineCircle.y, endLineTowardCenter.x, endLineTowardCenter.y);
+    }
+  
+  }
+  
+  save("C:/Users/hdinh/Desktop/CircleObjectTest.png");
+
+}
+
+
+void lineAngle(int x, int y, float angle, float length)
+{
+  line(x, y, x+cos(angle)*length, y-sin(angle)*length);
+}
+
+PVector endlineAngle(int x, int y, float angle, float length)
+{
+  return new PVector(x+cos(angle)*length, y-sin(angle)*length);
+}
+
+PVector endlineAngle(float x, float y, float angle, float length)
+{
+  return new PVector(x+cos(angle)*length, y-sin(angle)*length);
+}
+
+float invertAngle(float angle) {
+  return (angle + PI) % (2 * PI);
+}
+
+
+
