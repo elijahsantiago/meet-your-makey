@@ -16,24 +16,24 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 
 ### Publicatons:
 * CCSCSE Poster Presentation: October 25th 2019 Auburn, Alabama 
-*CREATE Symposium: November 21st 2019 Georgia Gwinnett College
+* CREATE Symposium: November 21st 2019 Georgia Gwinnett College
 
 ### Outreach Activites 
-Super Saturday Series(S3), Nov.9, 2019, GGC. - middle and high school girls to promote IT and STEM career
-Tap Expo, Oct.10, 2019,GGC. - Tp promot IT field and the TAP program to college students
-Classroom Workshops - on Nov.11, Nov.13 and Nov.15, 2019 3 occasions, to promote IT field to non-IT college students  
+* Super Saturday Series(S3), Nov.9, 2019, GGC. - middle and high school girls to promote IT and STEM career
+* Tap Expo, Oct.10, 2019,GGC. - Tp promot IT field and the TAP program to college students
+* Classroom Workshops - on Nov.11, Nov.13 and Nov.15, 2019 3 occasions, to promote IT field to non-IT college students  
 
 
 ### Technologies
 * Makey Makey by JoyLabz
 Makey Makey is a circuit board that acts as a keyboard input by using conductive materials
 https://makeymakey.com/
-https://images-na.ssl-images-amazon.com/images/I/81Or74Q0RYL._SL1500_.jpg
+![Image of Makey Makey] (https://images-na.ssl-images-amazon.com/images/I/81Or74Q0RYL._SL1500_.jpg)
 
 * Godot Game Engine
 Godot is a 2D and 3D, cross-platform, free and open-source game engine released under the MIT license.
 https://godotengine.org/
-https://prnt.sc/q84752
+![Image of Godot] (https://prnt.sc/q84752)
 
 ### Project Setup/Installation
 1. Download Gotdot Game Engine with the link below
@@ -42,10 +42,21 @@ https://prnt.sc/q84752
 	* meet-your-makey\Godot Synthetic\Project\project.godot
 
 ### Usage
-https://prnt.sc/q848st
-* There are eight keys (W,A,S,D,F,G,Left,Right) with instrument sound attached to them
-* Pressing down on those key will move the corresponding icon, and play the sound
-* Pressing up and down arrow on your key will rotate all the icon and change the pitch
+![Usage Picture] (https://prnt.sc/q848st)
+* 1. Input Mapper
+	* There are eight keys (W,A,S,D,F,G,Left,Right) with instrument sound attached to them
+	* Pressing down on those key will move the corresponding icon, and play the sound
+* 2. Volume Control
+	* Pressing up and down arrow on your key will rotate all the icon and change the pitch
+* 3. Music Player
+	* Play - Plays music function in the music script (res://script/Music.gd)
+	* Reset - Stop the music and reset the timer
+* 4. Recorder
+	* Record - Will record keyboard input, and output code representing the note played, time played, duration
+	* Clear - Clear out the textbox
+* 4. Instrument Tab
+	* Cello - Switch to cello
+	* Drum - Switch to drum
 
 
 	
