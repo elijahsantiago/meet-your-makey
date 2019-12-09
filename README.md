@@ -33,7 +33,7 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 **Godot Game Engine**
 * Godot is a 2D and 3D, cross-platform, free and open-source game engine released under the MIT license.
 * https://godotengine.org/
-* ![Image of Godot](https://prnt.sc/q84752)
+* ![Image of Godot](https://ibb.co/L5jxSTM)
 
 ### Project Setup/Installation
 1. Download Gotdot Game Engine with the link below
@@ -42,7 +42,7 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 	* meet-your-makey\Godot Synthetic\Project\project.godot
 
 ### Usage
-* ![Usage Picture](https://prnt.sc/q848st)
+* ![Usage Picture](https://ibb.co/BjnVNyX)
 * 1. Input Mapper
 	* There are eight keys (W,A,S,D,F,G,Left,Right) with instrument sound attached to them
 	* Pressing down on those key will move the corresponding icon, and play the sound
