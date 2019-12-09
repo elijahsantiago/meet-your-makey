@@ -28,11 +28,13 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 **Makey Makey by JoyLabz**
 * Makey Makey is a circuit board that acts as a keyboard input by using conductive materials
 * https://makeymakey.com/
+
 ![Image of Makey Makey](https://images-na.ssl-images-amazon.com/images/I/81Or74Q0RYL._SL1500_.jpg)
 
 **Godot Game Engine**
 * Godot is a 2D and 3D, cross-platform, free and open-source game engine released under the MIT license.
 * https://godotengine.org/
+
 ![Image of Godot](https://i.ibb.co/M6wcnzb/index.png)
 
 ### Project Setup/Installation
@@ -43,18 +45,18 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 
 ### Usage
 ![Usage Picture](https://i.ibb.co/RPjpy3x/index2.png)
-* 1. Input Mapper
+1. Input Mapper
 	* There are eight keys (W,A,S,D,F,G,Left,Right) with instrument sound attached to them
 	* Pressing down on those key will move the corresponding icon, and play the sound
-* 2. Volume Control
+2. Volume Control
 	* Pressing up and down arrow on your key will rotate all the icon and change the pitch
-* 3. Music Player
+3. Music Player
 	* Play - Plays music function in the music script (res://script/Music.gd)
 	* Reset - Stop the music and reset the timer
-* 4. Recorder
+4. Recorder
 	* Record - Will record keyboard input, and output code representing the note played, time played, duration
 	* Clear - Clear out the textbox
-* 4. Instrument Tab
+5. Instrument Tab
 	* Cello - Switch to cello
 	* Drum - Switch to drum
 
