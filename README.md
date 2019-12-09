@@ -10,7 +10,7 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 2. **Hieu Dinh** - Programmer
 3. **James Broome** - Designer
 4. **Khadijah** - Programmer
-* Advisers: meet-your-makey
+* Advisers
 1. **Anca Doloc Mihu** - Assistant Professor of Information Technology
 2. **Cindy Robertson** - Assistant Professor of Information Technology
 
