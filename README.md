@@ -25,15 +25,15 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 
 
 ### Technologies
-* Makey Makey by JoyLabz
-Makey Makey is a circuit board that acts as a keyboard input by using conductive materials
-https://makeymakey.com/
-![Image of Makey Makey] (https://images-na.ssl-images-amazon.com/images/I/81Or74Q0RYL._SL1500_.jpg)
+**Makey Makey by JoyLabz**
+* Makey Makey is a circuit board that acts as a keyboard input by using conductive materials
+* https://makeymakey.com/
+* ![Image of Makey Makey](https://images-na.ssl-images-amazon.com/images/I/81Or74Q0RYL._SL1500_.jpg)
 
-* Godot Game Engine
-Godot is a 2D and 3D, cross-platform, free and open-source game engine released under the MIT license.
-https://godotengine.org/
-![Image of Godot] (https://prnt.sc/q84752)
+**Godot Game Engine**
+* Godot is a 2D and 3D, cross-platform, free and open-source game engine released under the MIT license.
+* https://godotengine.org/
+* ![Image of Godot](https://prnt.sc/q84752)
 
 ### Project Setup/Installation
 1. Download Gotdot Game Engine with the link below
@@ -42,7 +42,7 @@ https://godotengine.org/
 	* meet-your-makey\Godot Synthetic\Project\project.godot
 
 ### Usage
-![Usage Picture] (https://prnt.sc/q848st)
+* ![Usage Picture](https://prnt.sc/q848st)
 * 1. Input Mapper
 	* There are eight keys (W,A,S,D,F,G,Left,Right) with instrument sound attached to them
 	* Pressing down on those key will move the corresponding icon, and play the sound
