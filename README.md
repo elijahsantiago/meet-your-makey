@@ -9,7 +9,7 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 1. **Alex Smyntyna** - Presenter
 2. **Hieu Dinh** - Programmer
 3. **James Broome** - Designer
-4. **Khadijah** - Programmer
+4. **Khadijah Nixon** - Programmer
 * Advisers
 1. **Anca Doloc Mihu** - Assistant Professor of Information Technology
 2. **Cindy Robertson** - Assistant Professor of Information Technology
@@ -20,7 +20,7 @@ The [Technical Ambassador Program](https://www.ggc.edu/academics/schools/school-
 
 ### Outreach Activites 
 * Super Saturday Series(S3), Nov.9, 2019, GGC. - middle and high school girls to promote IT and STEM career
-* Tap Expo, Oct.10, 2019,GGC. - Tp promot IT field and the TAP program to college students
+* Tap Expo, Oct.10, 2019,GGC. - To promote IT field and the TAP program to college students
 * Classroom Workshops - on Nov.11, Nov.13 and Nov.15, 2019 3 occasions, to promote IT field to non-IT college students  
 
 
