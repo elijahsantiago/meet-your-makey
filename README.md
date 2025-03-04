@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Makey Makey Logo" src="media/logos/makey_makey_logo.png" width="" height="350" />
+  <img alt="Makey Makey Logo" src="media/logo_placeholder.png" width="" height="350" />
   <h1 align="center">Synthetic Instruments: Exploring Algorithmic Thinking with Makey Makey</h1>
   <p align="center">A project for the Technical Ambassador Program by Team Meet-Your-Makey</p>
 </p>
@@ -22,14 +22,14 @@ This workshop has participants create their own instruments and experiment with 
 [Commercial Video](https://github.com/TAP-GGC/NinjaTurtles/assets/157164928/94b037a6-8912-44da-8a8c-84c0b8a0afb8)
 
 ## :pencil2: Team: meet-your-makey
-<img alt="Team Meet-Your-Makey" src="media/team photos/Team_Meet_Your_Makey.jpg" width="" height="300">
+<img alt="Team Meet-Your-Makey" src="media/Team Picture.jpg" width="" height="300">
 
-> (From left to right: Alex Smyntyna, Hieu Dinh, James Broome, Khadijah Nixon.)
+> (From left to right: Alex Smyntyna, Khadijah Nixon, James Broome, Hieu Dinh.)
 
 * **Alex Smyntyna** - Presenter
-* **Hieu Dinh** - Programmer
-* **James Broome** - Designer
 * **Khadijah Nixon** - Programmer
+* **James Broome** - Designer
+* **Hieu Dinh** - Programmer
 
 ## :mortar_board: Advisors
 * **Anca Doloc Mihu** - Assistant Professor of Information Technology
@@ -59,7 +59,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
 * [Godot](https://godotengine.org/) is a free and open-source game engine for both 2D and 3D game development.
 
 <p align="center">
-  <img alt="Godot Logo" src="media/technology/godot_logo.png" width="200" height="200"/>
+  <img alt="Godot Logo" src="media/logo_placeholder.png" width="200" height="200"/>
 </p>
 
 * Godot is used to create the interactive game and input mapping for this project.
