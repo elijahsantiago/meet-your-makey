@@ -11,7 +11,7 @@ This workshop has participants create their own instruments and experiment with 
 
 ## :bulb: Project Information
 * <b>Difficulty Level:</b> Intermediate
-* <b>Target Audience:</b> High School - College
+* <b>Target Audience:</b> K12 - College
 * <b>Duration of Workshop:</b> 1 hour
 * <b>Needed Materials:</b> Makey Makey kit, conductive materials (e.g., fruits, foil, playdough), computer with the Godot Game Engine installed
 * <b>Learning Outcomes:</b> The primary goal of this project is to teach participants about algorithmic thinking and basic input/output systems by creating their own instruments.
