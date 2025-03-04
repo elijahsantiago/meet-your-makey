@@ -86,6 +86,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
 5. **Instrument Tab**
    * **Cello** - Switch to cello.
    * **Drum** - Switch to drum.
+   * **Violin** - Switch to violin.
 
 ## Short Demo Instructions
 [Demo Video on how to install and play our game](https://youtu.be/mA80Aa55t-U)
