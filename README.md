@@ -52,7 +52,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
 
 ## :computer: Technology
 <p align="center">
-  <img alt="Makey Makey Logo" src="media/technology/makeymakeylogo.png" width="200" height="200"/>
+  <img alt="Makey Makey Logo" src="media/makeymakeylogo.png" width="200" height="200"/>
 </p>
 
 * [Makey Makey](https://makeymakey.com/) is a circuit board that allows everyday objects to replace keys on a keyboard, making it easy to create interactive and tactile experiences.
