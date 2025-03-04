@@ -19,6 +19,15 @@ export(Dictionary) onready var cello_dictionary = {
 	"A": load("res://Music/Cello/A.wav"),
 	"B": load("res://Music/Cello/B.wav"),
 	"C5": load("res://Music/Cello/C5.wav")}
+export(Dictionary) onready var violin_dictionary = {
+	"C": load("res://Music/Violin/C.wav"),
+	"D": load("res://Music/Violin/D.wav"),
+	"E": load("res://Music/Violin/E.wav"),
+	"F": load("res://Music/Violin/F.wav"),
+	"G": load("res://Music/Violin/G.wav"),
+	"A": load("res://Music/Violin/A.wav"),
+	"B": load("res://Music/Violin/B.wav"),
+	"C5": load("res://Music/Violin/C5.wav")}
 
 #Key Input and Reference
 var key_input_dictionary = {
