@@ -48,11 +48,11 @@ This project utilizes the Makey Makey device and the Godot game engine to create
 3. <b>Classroom Workshops</b>, Nov. 11, 13, 15, 2019, GGC. - Promoted the IT field to non-IT college students.
 
 ## :mag_right: Similar Projects
-If you're interested in more workshops that utilize interactive hardware, check out [Makey Makey Instruments](https://github.com/TAP-GGC/NinjaTurtles)!
+If you're interested in more workshops that utilize interactive hardware, check out [Project M's Fighting game](https://github.com/TAP-GGC/ProjectM)!
 
 ## :computer: Technology
 <p align="center">
-  <img alt="Makey Makey Logo" src="media/technology/makey_makey_logo.png" width="200" height="200"/>
+  <img alt="Makey Makey Logo" src="media/technology/makeymakeylogo.png" width="200" height="200"/>
 </p>
 
 * [Makey Makey](https://makeymakey.com/) is a circuit board that allows everyday objects to replace keys on a keyboard, making it easy to create interactive and tactile experiences.
