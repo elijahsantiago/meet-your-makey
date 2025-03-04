@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://prefab/Input Panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefab/Pitch Container.tscn" type="PackedScene" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://Images/Letter/A.png" type="Texture" id=15]
 [ext_resource path="res://Images/Letter/B.png" type="Texture" id=16]
 [ext_resource path="res://prefab/Keys.tscn" type="PackedScene" id=17]
-[ext_resource path="res://script/RecordContainer.gd" type="Script" id=18]
-[ext_resource path="res://script/ScrollItemContainer.gd" type="Script" id=19]
+[ext_resource path="res://script/ViolinKey.gd" type="Script" id=18]
+[ext_resource path="res://script/RecordContainer.gd" type="Script" id=19]
+[ext_resource path="res://script/ScrollItemContainer.gd" type="Script" id=20]
 
 [node name="Root Node" type="Node2D"]
 
@@ -30,6 +31,7 @@ margin_bottom = 600.0
 custom_constants/separation = -3
 
 [node name="Musical Container" type="PanelContainer" parent="HBoxContainer"]
+editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 230, 600 )
@@ -157,6 +159,7 @@ items = [ "C", null, false, -1, null, "D", null, false, -1, null, "E", null, fal
 selected = 7
 
 [node name="Pitch Panel" type="Panel" parent="HBoxContainer/Musical Container/VBoxContainer"]
+editor/display_folded = true
 margin_top = 353.0
 margin_right = 216.0
 margin_bottom = 551.0
@@ -185,6 +188,7 @@ step = 0.1
 focus_mode = 0
 
 [node name="Volume Container" parent="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer" instance=ExtResource( 3 )]
+editor/display_folded = true
 margin_top = 95.0
 margin_bottom = 130.0
 
@@ -273,6 +277,16 @@ ref_drum_key = {
 "F": NodePath("Drum/F Key"),
 "G": NodePath("Drum/G Key")
 }
+ref_violin_key = {
+"A": NodePath("Violin/A Key"),
+"B": NodePath("Violin/B Key"),
+"C": NodePath("Violin/C Key"),
+"C5": NodePath("Violin/C5 Key"),
+"D": NodePath("Violin/D Key"),
+"E": NodePath("Violin/E Key"),
+"F": NodePath("Violin/F Key"),
+"G": NodePath("Violin/G Key")
+}
 
 [node name="Cello" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
 editor/display_folded = true
@@ -284,7 +298,6 @@ margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/Visual Container/TabContainer/Cello"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -4.0
@@ -302,7 +315,6 @@ margin_bottom = 553.0
 rect_min_size = Vector2( 550, 550 )
 
 [node name="Circle Background" type="Sprite" parent="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel"]
-editor/display_folded = true
 position = Vector2( 275, 275 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 7 )
@@ -479,12 +491,142 @@ texture = ExtResource( 10 )
 stretch_mode = 6
 key = 0
 
+[node name="Violin" type="Tabs" parent="HBoxContainer/Visual Container/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 279, 277 )
+
+[node name="A Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -279.0
+margin_top = -277.0
+margin_right = -89.0
+margin_bottom = -382.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 95, 85 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="B Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 91.0
+margin_top = -277.0
+margin_right = 281.0
+margin_bottom = -382.0
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 95, 85 )
+texture = ExtResource( 16 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="D Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -289.0
+margin_top = 38.5125
+margin_right = -139.0
+margin_bottom = 188.513
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 11 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="E Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -61.4875
+margin_right = -14.0
+margin_bottom = 88.5126
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 12 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="F Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 6.0
+margin_top = -61.4875
+margin_right = 156.0
+margin_bottom = 88.5126
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 13 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="G Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 131.0
+margin_top = 38.5125
+margin_right = 281.0
+margin_bottom = -88.4874
+rect_min_size = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 75, 75 )
+texture = ExtResource( 14 )
+script = ExtResource( 18 )
+key = 0
+
+[node name="C5 Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = 85.0
+margin_right = 116.0
+margin_bottom = 285.0
+rect_pivot_offset = Vector2( 112.5, 100 )
+texture = ExtResource( 10 )
+stretch_mode = 6
+script = ExtResource( 18 )
+key = 0
+
+[node name="C Key" parent="HBoxContainer/Visual Container/TabContainer/Violin" instance=ExtResource( 17 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = 85.0
+margin_right = 116.0
+margin_bottom = 285.0
+rect_pivot_offset = Vector2( 112.5, 100 )
+texture = ExtResource( 10 )
+stretch_mode = 6
+script = ExtResource( 18 )
+key = 0
+
 [node name="Record Container" type="PanelContainer" parent="HBoxContainer"]
+editor/display_folded = true
 margin_left = 804.0
 margin_right = 1114.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 310, 0 )
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 ref_time_label = NodePath("Panel/VBoxContainer/Time Panel/Label")
 ref_rec_button = NodePath("Panel/VBoxContainer/Record Panel/HBoxContainer/Record")
 ref_scroll_item = NodePath("Panel/VBoxContainer/Scroll Container/Scroll Item Container")
@@ -559,7 +701,7 @@ scroll_horizontal_enabled = false
 
 [node name="Scroll Item Container" type="VBoxContainer" parent="HBoxContainer/Record Container/Panel/VBoxContainer/Scroll Container"]
 custom_constants/separation = 0
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 [connection signal="value_changed" from="HBoxContainer/Musical Container/VBoxContainer/Pitch Panel/VBoxContainer/Pitch Container/MarginContainer/VBoxContainer/pitch_slider" to="HBoxContainer/Visual Container/TabContainer/Cello/CenterContainer/Panel/Circle Background/Center" method="_on_pitch_slider_value_changed"]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/MarginContainer/HBoxContainer/Play" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Musical Container/VBoxContainer/Play Panel/MarginContainer/HBoxContainer/Reset" to="HBoxContainer/Musical Container/VBoxContainer/Play Panel" method="_on_Reset_pressed"]
