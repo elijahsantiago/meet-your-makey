@@ -24,12 +24,12 @@ This workshop has participants create their own instruments and experiment with 
 ## :pencil2: Team: meet-your-makey
 <img alt="Team Meet-Your-Makey" src="media/Team Picture.jpg" width="" height="300">
 
-> (From left to right: Alex Smyntyna, Khadijah Nixon, James Broome, Hieu Dinh.)
+> (From left to right: James Broome, Khadijah Nixon, Alex Smyntyna, Hieu Dinh.)
 
-* **Alex Smyntyna** - Presenter
-* **Khadijah Nixon** - Programmer
-* **James Broome** - Designer
-* **Hieu Dinh** - Programmer
+* **James Broome**
+* **Khadijah Nixon**
+* **Alex Smyntyna**
+* **Hieu Dinh**
 
 ## :mortar_board: Advisors
 * **Anca Doloc Mihu** - Assistant Professor of Information Technology
