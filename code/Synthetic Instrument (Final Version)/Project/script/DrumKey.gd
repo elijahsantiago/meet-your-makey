@@ -50,6 +50,5 @@ func _play_music():
 	if AudioManager.is_recording == true:
 		AudioManager.ref_scroll_item_container._spawn("Drum", key_value, AudioManager.elapsed_mili, .1)
 
-
 func _stop_music():
 	pass

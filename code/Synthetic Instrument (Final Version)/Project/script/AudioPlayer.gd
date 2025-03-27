@@ -25,6 +25,8 @@ func play():
 			note_dictionary = AudioManager.drum_dictionary
 		"Violin":
 			note_dictionary = AudioManager.violin_dictionary
+		"Piano":
+			note_dictionary = AudioManager.piano_dictionary
 	
 	audio_player.stream = note_dictionary[note.to_upper()]
 	

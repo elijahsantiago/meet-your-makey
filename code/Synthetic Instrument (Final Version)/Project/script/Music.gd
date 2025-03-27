@@ -1,36 +1,32 @@
 extends Node
 
+var fur_elise_notes = [
+    {"note": "E", "length": 0.25}, {"note": "C5", "length": 0.25}, {"note": "E", "length": 0.25},  
+    {"note": "C5", "length": 0.25}, {"note": "E", "length": 0.25}, {"note": "B", "length": 0.3},  
+    {"note": "D", "length": 0.3}, {"note": "C", "length": 0.5}, {"note": "A", "length": 0.9},  
 
-#play(instrument, note, time_start, length)
+    {"note": "C", "length": 0.3}, {"note": "E", "length": 0.3}, {"note": "A", "length": 0.3},  
+    {"note": "B", "length": 0.3}, {"note": "E", "length": 0.3}, {"note": "C5", "length": 0.9},   
 
+    {"note": "E", "length": 0.25}, {"note": "C5", "length": 0.25}, {"note": "E", "length": 0.25},  
+    {"note": "C5", "length": 0.25}, {"note": "E", "length": 0.25}, {"note": "B", "length": 0.3},  
+    {"note": "D", "length": 0.3}, {"note": "C", "length": 0.6}, {"note": "A", "length": 0.9}
+]
 
-var dark_horse_beat = ["C5","C5","C5","C5","B","B","A","E",]
-
-# Called when the node enters the scene tree for the first time.
 func play():
-    
-#      for x in range(0,3):
-#        example_1()
+    play_happy_birthday()
 
-      for x in range(1,3):
-        example_2()
+func play_happy_birthday():
+    var start_time = 0
     
+	#Note Scrubbing
+    for i in range(fur_elise_notes.size()):
+        var note_data = fur_elise_notes[i]
+        var next_note_start = start_time + note_data["length"] - 0.05 
+        
+        # Controls Instrument Based on Tab - Useful for not hardcoding
+        AudioManager.play(AudioManager.instrument, note_data["note"], start_time, note_data["length"] + 0.05)  
+        
+        start_time = next_note_start + 0.03
 
-func example_1():
-    AudioManager.play("Cello", "C5", 0, 1)
-    AudioManager.play("Cello", "C5", 1.1, 1)
-    AudioManager.play("Cello", "C5", 2.1, 1)
-    AudioManager.play("Cello", "C5", 3.1, 1)
-    AudioManager.play("Cello", "B", 4.1, 1)
-    AudioManager.play("Cello", "B", 5.1, 1)
-    AudioManager.play("Cello", "A", 6.1, 1)
-    AudioManager.play("Cello", "E", 7.1, 1)
-    
-    
-func example_2():
-    
-    var StartNoteTime = 0; #starts the notes and song at 5 seconds
-    
-    for note in dark_horse_beat:
-        AudioManager.play("Cello", note, StartNoteTime, .7)
-        StartNoteTime += .75 #increases the start time of the next note by .5 seconds
+

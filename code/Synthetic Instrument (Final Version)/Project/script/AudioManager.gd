@@ -28,6 +28,15 @@ export(Dictionary) onready var violin_dictionary = {
 	"A": load("res://Music/Violin/A.wav"),
 	"B": load("res://Music/Violin/B.wav"),
 	"C5": load("res://Music/Violin/C5.wav")}
+export(Dictionary) onready var piano_dictionary = {
+	"C": load("res://Music/Piano/C.wav"),
+	"D": load("res://Music/Piano/D.wav"),
+	"E": load("res://Music/Piano/E.wav"),
+	"F": load("res://Music/Piano/F.wav"),
+	"G": load("res://Music/Piano/G.wav"),
+	"A": load("res://Music/Piano/A.wav"),
+	"B": load("res://Music/Piano/B.wav"),
+	"C5": load("res://Music/Piano/C5.wav")}
 
 #Key Input and Reference
 var key_input_dictionary = {
@@ -48,6 +57,7 @@ var ref_key = {
 	"A" : null,
 	"B": null,
 	"C5": null}
+	
 
 #Audio Node Ref
 var ref_volume_control
