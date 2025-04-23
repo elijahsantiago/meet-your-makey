@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="Makey Makey Logo" src="media/logo_placeholder.png" width="" height="350" />
   <h1 align="center">Synthetic Instruments: Exploring Algorithmic Thinking with Makey Makey</h1>
-  <p align="center">A project for the Technical Ambassador Program by Team Meet-Your-Makey</p>
+  <p align="center">A project for the Technology Ambassador Program by Team Meet-Your-Makey</p>
 </p>
 
 ## :loudspeaker: About
@@ -19,7 +19,7 @@ This workshop has participants create their own instruments and experiment with 
 
 [Technology Ambassador Program](https://tapggc.org/) (TAP) is a project-based class that provides a collaborative environment for students to work with their fellow classmates on a semester-long project using technologies of their choice. TAP strives to increase participation in IT through numerous outreach activities and workshops that are designed to showcase the creative and fun side of technology.
 
-[Commercial Video](https://github.com/TAP-GGC/NinjaTurtles/assets/157164928/94b037a6-8912-44da-8a8c-84c0b8a0afb8)
+[Commercial Video](https://github.com/user-attachments/assets/4fb8e135-8cc1-4bc3-bc4d-fd2f2204923b)
 
 ## :pencil2: Team: meet-your-makey
 <img alt="Team Meet-Your-Makey" src="media/Team Picture.jpg" width="" height="300">
@@ -79,6 +79,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
    * Pressing the up and down arrows on your keyboard will rotate all the icons and change the pitch.
 3. **Music Player**
    * **Play** - Plays music function in the music script (res://script/Music.gd)
+   * **Next Song** - Moves onto the next song within Music.gd.
    * **Reset** - Stops the music and resets the timer.
 4. **Recorder**
    * **Record** - Will record keyboard input and output code representing the note played, time played, and duration.
@@ -87,6 +88,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
    * **Cello** - Switch to cello.
    * **Drum** - Switch to drum.
    * **Violin** - Switch to violin.
+   * **Piano** - Switch to Piano.
 
 ## Short Demo Instructions
 [Demo Video on how to install and play our game](https://youtu.be/mA80Aa55t-U)
