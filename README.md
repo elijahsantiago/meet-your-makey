@@ -79,6 +79,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
    * Pressing the up and down arrows on your keyboard will rotate all the icons and change the pitch.
 3. **Music Player**
    * **Play** - Plays music function in the music script (res://script/Music.gd)
+   * **Next Song** - Moves onto the next song within Music.gd.
    * **Reset** - Stops the music and resets the timer.
 4. **Recorder**
    * **Record** - Will record keyboard input and output code representing the note played, time played, and duration.
@@ -87,6 +88,7 @@ If you're interested in more workshops that utilize interactive hardware, check 
    * **Cello** - Switch to cello.
    * **Drum** - Switch to drum.
    * **Violin** - Switch to violin.
+   * **Piano** - Switch to Piano.
 
 ## Short Demo Instructions
 [Demo Video on how to install and play our game](https://youtu.be/mA80Aa55t-U)
