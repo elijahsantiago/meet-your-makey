@@ -19,7 +19,7 @@ This workshop has participants create their own instruments and experiment with 
 
 [Technology Ambassador Program](https://tapggc.org/) (TAP) is a project-based class that provides a collaborative environment for students to work with their fellow classmates on a semester-long project using technologies of their choice. TAP strives to increase participation in IT through numerous outreach activities and workshops that are designed to showcase the creative and fun side of technology.
 
-[Commercial Video](https://github.com/user-attachments/assets/928ae673-c72e-4f06-bf77-fb0d4c4910e3)
+[Commercial Video](https://github.com/user-attachments/assets/4fb8e135-8cc1-4bc3-bc4d-fd2f2204923b)
 
 ## :pencil2: Team: meet-your-makey
 <img alt="Team Meet-Your-Makey" src="media/Team Picture.jpg" width="" height="300">
