@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CelloG.wav-5f10f0d3c25a93c2b9bf8edea7acc7f5.sample"
+
+[deps]
+
+source_file="res://Music/CelloG.wav"
+dest_files=[ "res://.import/CelloG.wav-5f10f0d3c25a93c2b9bf8edea7acc7f5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

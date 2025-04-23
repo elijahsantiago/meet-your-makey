@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/F.wav-cfad4b4278c5f1007aca57347b14c6be.sample"
+
+[deps]
+
+source_file="res://Music/Violin/F.wav"
+dest_files=[ "res://.import/F.wav-cfad4b4278c5f1007aca57347b14c6be.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
