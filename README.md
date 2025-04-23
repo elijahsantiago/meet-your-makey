@@ -1,7 +1,7 @@
 <p align="center">
   <img alt="Makey Makey Logo" src="media/logo_placeholder.png" width="" height="350" />
   <h1 align="center">Synthetic Instruments: Exploring Algorithmic Thinking with Makey Makey</h1>
-  <p align="center">A project for the Technical Ambassador Program by Team Meet-Your-Makey</p>
+  <p align="center">A project for the Technology Ambassador Program by Team Meet-Your-Makey</p>
 </p>
 
 ## :loudspeaker: About
